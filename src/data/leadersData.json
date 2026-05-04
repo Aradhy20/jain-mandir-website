@@ -1,0 +1,92 @@
+{
+  "about_mataji": {
+    "name_en": "Pujya Ganini Pramukh Aryika Shri Gyanmati Mataji",
+    "name_hi": "परम पूज्य गणिनीप्रमुख आर्यिका शिरोमणि श्री ज्ञानमती माताजी",
+    "birth": "22 October 1934",
+    "birth_place": "Tikaitnagar (Barabanki) U.P.",
+    "childhood_name": "Maina",
+    "diksha": "Kshullika (1953), Aryika (1956) from Acharya Shri Veersagar Ji",
+    "achievements": [
+      "Author of simplified Sanskrit Commentary on Shatkhandagam (16 volumes)",
+      "Honorary D.Litt. (1995) from Dr. Ram Manohar Lohia Avadh University",
+      "Visionary behind Jambudweep, Hastinapur and 108ft Statue of Ahimsa"
+    ],
+    "bio_hi": "पूज्य गणिनीप्रमुख आर्यिका श्री ज्ञानमती माताजी बीसवीं सदी की महानतम जैन साध्वियों में से एक हैं। आपका जन्म २२ अक्टूबर १९३४ को उत्तरप्रदेश के टिकैतनगर (बाराबंकी) में हुआ था। आपने १९५२ में सांसारिक जीवन का त्याग किया और १९५६ में आचार्य वीरसागर जी महाराज से आर्यिका दीक्षा ग्रहण की। आपने २००० वर्ष पुराने 'षट्खण्डागम' ग्रंथ की संस्कृत टीका लिखकर एक ऐतिहासिक कार्य किया।",
+    "bio_en": "Pujya Ganini Pramukh Aryika Shri Gyanmati Mataji is a preeminent Jain saint of the 20th century. Born in 1934, she renounced worldly life in 1952. Her most significant contribution is the simplified Sanskrit commentary on the ancient 'Shatkhandagam' scripture, making profound wisdom accessible to all."
+  },
+  "leaders": [
+    {
+      "id": 1,
+      "name_en": "Aryika Chandnamati Mataji",
+      "name_hi": "प्रज्ञाश्रमणी आर्यिका श्री चंदनामती माताजी",
+      "role_en": "Margdarshika (Spiritual Guide)",
+      "role_hi": "संस्थान की मार्गदर्शिका",
+      "birth": "18 May 1958, Tikaitnagar (Barabanki) U.P.",
+      "diksha": "13 August 1989 at Jambudweep, Hastinapur",
+      "specialty_hi": "षट्खण्डागम जैसे महान ग्रंथ की हिन्दी टीकाकर्त्री एवं अनेक पूजा-विधान, भजन व जैन दर्शन के साहित्यों की लेखिका।",
+      "bio_en": "A prolific author and the official Hindi translator of the Shatkhandagam. She serves as the intellectual and spiritual guide for the Sansthan's publication and research wings.",
+      "bio_hi": "आप पूज्य ज्ञानमती माताजी की प्रमुख शिष्या हैं। आपने १८ मई १९५८ को जन्म लिया और १९८९ में दीक्षा ग्रहण की। आपने प्राचीन ग्रंथों का सरल हिंदी अनुवाद कर जैन साहित्य की अपूर्व सेवा की है।",
+      "image": "/jambudweep/chandnamati_mataji.png"
+    },
+    {
+      "id": 2,
+      "name_en": "Swasti Shri Ravinkirti Swami Ji",
+      "name_hi": "स्वस्ति श्री कर्मयोगी पीठाधीश रवीन्द्रकीर्ति स्वामी जी",
+      "role_en": "President & Current Peethadheesh",
+      "role_hi": "वर्तमान पीठाधीश एवं अध्यक्ष",
+      "birth": "1950, Tikaitnagar (Barabanki) U.P.",
+      "president_since": "1987",
+      "peethadheesh_coronation": "20 November 2011",
+      "titles_hi": "कर्मयोगी, धर्म संरक्षणाचार्य, संस्कृति संरक्षक, धर्मालंकार, संस्कृति सार्थवाह, तीर्थोद्धारक",
+      "bio_en": "The current Head of the Sansthan since 1987. Known as a 'Karmayogi' for his tireless dedication to building Jambudweep and preserving Jain heritage across India.",
+      "bio_hi": "आप १९८७ से संस्थान के अध्यक्ष हैं। २० नवम्बर २०११ को आपका पीठाधीश पदारोहण हुआ। आपके नेतृत्व में अनेक तीर्थों का उद्धार और जम्बूद्वीप का विस्तार हुआ है।",
+      "image": "/jambudweep/ravindrakirti_swami.png"
+    },
+    {
+      "id": 3,
+      "name_en": "Muni Shri Moti Sagar Ji Maharaj",
+      "name_hi": "पीठाधीश क्षुल्लक श्री मोतीसागर जी महाराज",
+      "role_en": "Founding Head (First Peethadheesh)",
+      "role_hi": "प्रथम पीठाधीश",
+      "birth": "30 September 1940, Sanawad (M.P.)",
+      "diksha": "8 March 1987 at Jambudweep, Hastinapur",
+      "samadhi": "10 November 2011",
+      "bio_en": "The founding spiritual head who oversaw the initial construction of Jambudweep. His dedication and vision laid the cornerstone of the Sansthan's global presence.",
+      "bio_hi": "आप जम्बूद्वीप के प्रथम पीठाधीश थे। आपने १९८७ में दीक्षा ली और संस्थान के प्रारंभिक निर्माण कार्यों में अपना सर्वस्व समर्पित कर दिया।",
+      "image": "/jambudweep/motisagar_ji.png"
+    }
+  ],
+  "institution": {
+    "name_hi": "दिगंबर जैन त्रिलोक शोध संस्थान",
+    "name_en": "Digambar Jain Trilok Shodh Sansthan",
+    "mission_en": "Research in Jain Cosmography and restoration of Tirthankar birthplaces.",
+    "mission_hi": "जैन भूगोल (कॉस्मोग्राफी) पर शोध एवं उपेक्षित तीर्थंकर जन्मभूमियों का विकास।",
+    "projects": ["Jambudweep Hastinapur", "108ft Statue of Ahimsa", "Veer Gyanoday Granthmala"]
+  },
+  "trust_committee": {
+    "general_secretary": {
+      "name_hi": "श्री कैलाश चन्द जैन (दिल्ली)",
+      "name_en": "Shri Kailash Chand Jain (Delhi)"
+    },
+    "members": [
+      { "name_hi": "श्री जीवन प्रकाश जैन", "name_en": "Shri Jeevan Prakash Jain" },
+      { "name_hi": "डॉ. संजीव सराफ", "name_en": "Dr. Sanjeev Saraf" },
+      { "name_hi": "श्री आयुष जैन (इंदौर)", "name_en": "Shri Ayush Jain (Indore)" },
+      { "name_hi": "श्री अम्बुज जैन (इंदौर)", "name_en": "Shri Ambuj Jain (Indore)" }
+    ]
+  },
+  "administration": {
+    "manager": {
+      "name_hi": "श्री राजेश जैन",
+      "name_en": "Shri Rajesh Jain",
+      "role_en": "Manager (Prabandhak)",
+      "role_hi": "प्रबंधक"
+    },
+    "accountant": {
+      "name_hi": "श्री संजीव जैन",
+      "name_en": "Shri Sanjiv Jain",
+      "role_en": "Chief Accountant",
+      "role_hi": "मुख्य लेखाकार"
+    }
+  }
+}

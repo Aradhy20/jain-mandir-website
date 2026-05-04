@@ -1,0 +1,44 @@
+{
+  "festivals": [
+    {
+      "name_hi": "दशलक्षण पर्व (पर्युषण) 2024",
+      "name_en": "Das Lakshana Parva (Paryushan) 2024",
+      "dates": "September 8, 2024 – September 17, 2024",
+      "status": "Upcoming",
+      "description_hi": "दिगंबर जैन समाज का सबसे पवित्र पर्व, जिसमें १० दिनों तक धर्म के १० लक्षणों की आराधना की जाती है।",
+      "description_en": "The holiest 10 days of the Digambar Jain community, focusing on the ten virtues of the soul."
+    },
+    {
+      "name_hi": "महावीर जयंती 2025",
+      "name_en": "Mahavir Jayanti 2025",
+      "dates": "April 10, 2025",
+      "status": "Scheduled",
+      "description_hi": "भगवान महावीर का जन्म कल्याणक महोत्सव, जो अहिंसा और शांति का संदेश देता है।",
+      "description_en": "The birth anniversary of Lord Mahavira, spreading the message of non-violence and universal peace."
+    },
+    {
+      "name_hi": "दशलक्षण पर्व (पर्युषण) 2025",
+      "name_en": "Das Lakshana Parva (Paryushan) 2025",
+      "dates": "August 28, 2025 – September 6, 2025",
+      "status": "Scheduled",
+      "description_hi": "२०२५ के लिए दशलक्षण पर्व की तिथियां निर्धारित की गई हैं।",
+      "description_en": "Scheduled dates for the 2025 Das Lakshana Parva celebrations."
+    }
+  ],
+  "ongoing_projects": [
+    {
+      "title_hi": "जम्बूद्वीप संरचना नवीनीकरण",
+      "title_en": "Jambudweep Structural Renovation",
+      "status": "Active",
+      "description_hi": "जम्बूद्वीप की विशाल संरचना और सुमेरु पर्वत का वैज्ञानिक तरीके से संरक्षण और सौंदर्यकरण कार्य।",
+      "description_en": "Scientific preservation and beautification of the massive Jambudweep complex and Mount Sumeru."
+    },
+    {
+      "title_hi": "षट्खण्डागम हिंदी अनुवाद",
+      "title_en": "Shatkhandagam Hindi Translation",
+      "status": "Ongoing",
+      "description_hi": "२००० वर्ष प्राचीन षट्खण्डागम ग्रंथों का सरल हिंदी में अनुवाद कार्य पूज्य चंदनामती माताजी के निर्देशन में जारी।",
+      "description_en": "The translation of the 2,000-year-old Shatkhandagam scriptures into simple Hindi under the guidance of Aryika Chandnamati Mataji."
+    }
+  ]
+}

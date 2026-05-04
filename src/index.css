@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #7E4555;
+    --color-primary-dark: #5C323E;
+    --color-secondary: #D4AF37;
+    --color-background: #FFFBF0;
+    --color-surface: #ffffff;
+    --color-text-main: #1f2937;
+    --color-text-muted: #4b5563;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.masonry-grid {
+  columns: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    columns: 3;
+  }
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(126, 69, 85, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.bg-grid {
+  background-image: linear-gradient(rgba(126, 69, 85, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 69, 85, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
