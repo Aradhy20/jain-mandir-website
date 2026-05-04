@@ -9,8 +9,8 @@ const newsItems = [
 ];
 
 const blogItems = [
-  { id: 1, title: 'Understanding Ahimsa in Modern Life', excerpt: 'How non-violence translates to our daily digital interactions and food choices...', image: '/use-assets/5.jpeg' },
-  { id: 2, title: 'The Significance of Fasting', excerpt: 'Exploring the spiritual and physical benefits of traditional Jain fasting rituals...', image: '/use-assets/6.jpeg' }
+  { id: 1, title: 'Understanding Ahimsa in Modern Life', excerpt: 'How non-violence translates to our daily digital interactions and food choices...', image: '/use-assets/5.jpg' },
+  { id: 2, title: 'The Significance of Fasting', excerpt: 'Exploring the spiritual and physical benefits of traditional Jain fasting rituals...', image: '/use-assets/6.jpg' }
 ];
 
 export default function NewsBlogs() {

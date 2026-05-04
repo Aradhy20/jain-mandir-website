@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const members = [
-  { id: 1, name: 'Shri Rajendra Kumar', role: 'President', image: '/use-assets/1.JPEG' },
-  { id: 2, name: 'Smt. Anjali Jain', role: 'Secretary', image: '/use-assets/2.JPEG' },
-  { id: 3, name: 'Dr. Alok Vardhan', role: 'Treasurer', image: '/use-assets/3.jpeg' },
-  { id: 4, name: 'Shri Navin Chand', role: 'Core Member', image: '/use-assets/4.jpeg' },
-  { id: 5, name: 'Shri Manoj Jain', role: 'Trustee', image: '/use-assets/5.jpeg' },
-  { id: 6, name: 'Smt. Sarita Devi', role: 'Trustee', image: '/use-assets/6.jpeg' }
+  { id: 1, name: 'Shri Rajendra Kumar', role: 'President', image: '/use-assets/1.jpg' },
+  { id: 2, name: 'Smt. Anjali Jain', role: 'Secretary', image: '/use-assets/2.jpg' },
+  { id: 3, name: 'Dr. Alok Vardhan', role: 'Treasurer', image: '/use-assets/3.jpg' },
+  { id: 4, name: 'Shri Navin Chand', role: 'Core Member', image: '/use-assets/4.jpg' },
+  { id: 5, name: 'Shri Manoj Jain', role: 'Trustee', image: '/use-assets/5.jpg' },
+  { id: 6, name: 'Smt. Sarita Devi', role: 'Trustee', image: '/use-assets/6.jpg' }
 ];
 
 export default function Members() {

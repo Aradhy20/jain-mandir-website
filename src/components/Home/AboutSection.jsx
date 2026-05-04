@@ -25,7 +25,7 @@ export default function AboutSection() {
                 muted 
                 playsInline
                 className="w-full h-[500px] object-cover scale-105"
-                src="/use-assets/Kamal mandir 2.MP4"
+                src="/use-assets/kamal_mandir_2.mp4"
               ></video>
             </div>
             
@@ -37,7 +37,7 @@ export default function AboutSection() {
               className="absolute -bottom-10 -right-10 hidden md:block z-20"
             >
               <img 
-                src="/jambudweep/gyan mati mataji .png" 
+                src="/jambudweep/gyanmati_mataji.png"
                 alt="Jambudweep Architecture" 
                 className="w-64 h-64 rounded-2xl shadow-2xl border-8 border-white object-cover hover:scale-105 transition-transform duration-500" 
               />

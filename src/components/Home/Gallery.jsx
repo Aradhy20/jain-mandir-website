@@ -13,8 +13,8 @@ const galleryImages = [
   { src: '/use-assets/18.jpg', span: 'md:col-span-1 md:row-span-1' },
   { src: '/use-assets/19.jpg', span: 'md:col-span-2 md:row-span-2' },
   { src: '/use-assets/20.jpg', span: 'md:col-span-1 md:row-span-1' },
-  { src: '/use-assets/21.JPG', span: 'md:col-span-1 md:row-span-1' },
-  { src: '/use-assets/22.JPG', span: 'md:col-span-1 md:row-span-1' }
+  { src: '/use-assets/21.jpg', span: 'md:col-span-1 md:row-span-1' },
+  { src: '/use-assets/22.jpg', span: 'md:col-span-1 md:row-span-1' }
 ];
 
 export default function Gallery() {

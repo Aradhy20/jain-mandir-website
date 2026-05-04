@@ -121,8 +121,8 @@ export default function About() {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <img src="/jambudweep/प्रज्ञाश्रमणी आर्यिका श्री चंदनामती माताजी.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl" alt="Scholarship" />
-              <img src="/jambudweep/स्वस्ति श्री कर्मयोगी पीठाधीश रवीन्द्रकीर्ति स्वामी जी.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl mt-8" alt="Management" />
+              <img src="/jambudweep/chandnamati_mataji.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl" alt="Scholarship" />
+              <img src="/jambudweep/ravindrakirti_swami.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl mt-8" alt="Management" />
             </div>
           </div>
         </section>

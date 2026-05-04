@@ -5,14 +5,14 @@ export default function FeatureSection() {
   return (
     <section className="py-24 bg-gray-900 relative">
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover opacity-20"
-          src="/use-assets/Sumeru parvat 5.MP4"
-        ></video>
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover opacity-20"
+            src="/use-assets/sumeru_parvat_5.mp4"
+          ></video>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
