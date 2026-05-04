@@ -23,7 +23,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center gap-3" aria-label="Shri Digambar Jain Mandir Home">
-            <img src="/use-assets/10.jpg" alt="" className="h-12 w-12 rounded-full object-cover shadow-md border-2 border-primary" />
+            <img loading="lazy" src="/use-assets/10.jpg" alt="" className="h-12 w-12 rounded-full object-cover shadow-md border-2 border-primary" />
             <div className="flex flex-col">
               <span className="font-serif font-bold text-xl lg:text-2xl text-primary-dark leading-tight">Shri Digambar</span>
               <span className="text-xs lg:text-sm font-medium tracking-widest text-text-muted">Jain Mandir</span>
@@ -71,7 +71,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-surface border-t border-gray-100 shadow-xl overflow-hidden"
+            className="xl:hidden bg-surface border-t border-gray-100 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)]"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {links.map((item) => (

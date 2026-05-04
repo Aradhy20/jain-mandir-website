@@ -5,13 +5,13 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('/use-assets/21.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'overlay' }}></div>
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('/use-assets/16.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'overlay' }}></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img src="/use-assets/10.jpg" alt="" className="h-10 w-10 rounded-full" />
+              <img loading="lazy" src="/use-assets/10.jpg" alt="" className="h-10 w-10 rounded-full" />
               <span className="font-serif font-bold text-2xl text-primary">Jain Mandir</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">

@@ -27,13 +27,13 @@ export default function TrustMembers() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-background rounded-2xl p-6 text-center shadow border border-gray-100 hover:shadow-xl hover:border-primary/30 transition-all group"
+              className="bg-background rounded-3xl p-6 text-center shadow border border-gray-100 hover:shadow-xl hover:border-primary/30 transition-all group"
             >
-              <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-surface shadow-md">
-                <img 
+              <div className="w-full aspect-[3/4] md:aspect-[4/5] mx-auto rounded-2xl overflow-hidden mb-4 shadow-md">
+                <img loading="lazy" 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-500" 
                 />
               </div>
               <h3 className="text-xl font-bold text-text-main">{member.name}</h3>

@@ -42,7 +42,7 @@ export default function Gallery() {
               transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
               className={`${item.span} group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500`}
             >
-              <img 
+              <img loading="lazy" 
                 src={item.src} 
                 alt={`Temple Gallery ${index + 1}`} 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 

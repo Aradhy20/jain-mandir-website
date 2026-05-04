@@ -34,7 +34,7 @@ export default function News() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold text-primary-dark mb-6"
+            className="text-3xl md:text-5xl font-bold text-primary-dark mb-6"
           >
             News & Articles
           </motion.h1>
@@ -54,7 +54,7 @@ export default function News() {
               className="bg-surface rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col h-full group"
             >
               <div className="h-56 overflow-hidden">
-                <img 
+                <img loading="lazy" 
                   src={item.image} 
                   alt={item.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

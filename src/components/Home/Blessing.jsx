@@ -5,9 +5,9 @@ export default function Blessing() {
   return (
     <section className="py-24 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-primary-dark rounded-[4rem] p-12 md:p-20 relative overflow-hidden shadow-2xl">
+        <div className="bg-primary-dark rounded-3xl md:rounded-[4rem] p-6 md:p-12 lg:p-20 relative overflow-hidden shadow-2xl">
           {/* Background Image Overlay */}
-          <div className="absolute inset-0 opacity-20 bg-[url('/use-assets/21.jpg')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 opacity-20 bg-[url('/use-assets/11.jpg')] bg-cover bg-center"></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <motion.div
@@ -37,10 +37,10 @@ export default function Blessing() {
             >
               <div className="relative group">
                 <div className="absolute -inset-4 bg-secondary/20 rounded-full blur-2xl group-hover:bg-secondary/40 transition-all duration-700"></div>
-                <img 
+                <img loading="lazy" 
                   src="/jambudweep/gyanmati_mataji.png" 
                   alt="Portrait of Pujya Ganinipramukh Aryika Shri Gyanmati Mataji - Spiritual Leader" 
-                  className="relative w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-8 border-white/10 shadow-2xl group-hover:scale-105 transition-transform duration-500" 
+                  className="relative w-80 h-80 md:w-96 md:h-96 rounded-3xl md:rounded-[3rem] object-cover object-top border-8 border-white/10 shadow-2xl group-hover:scale-105 transition-transform duration-500 scale-[0.98]" 
                 />
               </div>
             </motion.div>

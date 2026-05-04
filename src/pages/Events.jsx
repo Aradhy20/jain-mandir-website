@@ -66,9 +66,9 @@ export default function Events() {
                 initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-primary-dark text-white rounded-[3rem] p-10 md:p-14 relative overflow-hidden group shadow-2xl"
+                className="bg-primary-dark text-white rounded-3xl md:rounded-[3rem] p-10 md:p-14 relative overflow-hidden group shadow-2xl"
               >
-                <div className="absolute top-0 right-0 p-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
+                <div className="absolute top-0 right-0 p-6 md:p-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
                   {index === 0 ? <Construction size={120} /> : <BookOpen size={120} />}
                 </div>
                 <div className="relative z-10">

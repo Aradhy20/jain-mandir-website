@@ -58,7 +58,7 @@ export default function Donations() {
           ))}
         </div>
 
-        <div className="bg-surface p-8 md:p-20 rounded-[3rem] md:rounded-[4rem] shadow-sm border border-primary/5">
+        <div className="bg-surface p-6 md:p-12 lg:p-20 rounded-3xl md:rounded-[3rem] md:rounded-[4rem] shadow-sm border border-primary/5">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-text-main mb-6 font-serif">Bank Transfer Details</h2>

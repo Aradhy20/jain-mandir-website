@@ -19,11 +19,11 @@ export default function Leaders() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="absolute -inset-4 bg-primary/10 rounded-[3rem] blur-xl"></div>
-              <img 
+              <div className="absolute -inset-4 bg-primary/10 rounded-3xl md:rounded-[3rem] blur-xl"></div>
+              <img loading="lazy" 
                 src="/jambudweep/gyanmati_mataji.png" 
                 alt="Gyanmati Mataji" 
-                className="relative rounded-[3rem] shadow-2xl w-full h-[650px] object-cover border-8 border-white" 
+                className="relative rounded-3xl md:rounded-[3rem] shadow-2xl w-full h-[650px] object-cover object-top border-8 border-white" 
               />
             </motion.div>
             
@@ -84,13 +84,13 @@ export default function Leaders() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-[2.5rem] p-10 shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 group"
+                className="bg-white rounded-[2.5rem] p-6 md:p-10 shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-500 group"
               >
-                <div className="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-surface shadow-lg">
-                  <img 
+                <div className="w-full aspect-[3/4] md:aspect-[4/5] mx-auto mb-8 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                  <img loading="lazy" 
                     src={leader.image} 
                     alt={leader.name_en} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-500" 
                   />
                 </div>
                 <div className="text-center">
@@ -141,7 +141,7 @@ export default function Leaders() {
         </section>
 
         {/* Institution Section */}
-        <section className="bg-primary/5 rounded-[4rem] p-12 md:p-20 text-center mb-24">
+        <section className="bg-primary/5 rounded-3xl md:rounded-[4rem] p-6 md:p-12 lg:p-20 text-center mb-24">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -170,7 +170,7 @@ export default function Leaders() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100"
+            className="bg-white p-6 md:p-12 rounded-3xl md:rounded-[3rem] shadow-sm border border-gray-100"
           >
             <h3 className="text-2xl font-bold text-text-main mb-8 font-serif">Trust Committee</h3>
             <div className="space-y-6">
@@ -194,7 +194,7 @@ export default function Leaders() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100"
+            className="bg-white p-6 md:p-12 rounded-3xl md:rounded-[3rem] shadow-sm border border-gray-100"
           >
             <h3 className="text-2xl font-bold text-text-main mb-8 font-serif">Administrative Heads</h3>
             <div className="space-y-8">

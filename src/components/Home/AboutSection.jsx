@@ -36,9 +36,9 @@ export default function AboutSection() {
               transition={{ delay: 0.5 }}
               className="absolute -bottom-10 -right-10 hidden md:block z-20"
             >
-              <img 
-                src="/jambudweep/gyanmati_mataji.png"
-                alt="Jambudweep Architecture" 
+              <img loading="lazy" 
+                src="/use-assets/12.jpg"
+                alt="Jambudweep Architecture - Meditation Temple" 
                 className="w-64 h-64 rounded-2xl shadow-2xl border-8 border-white object-cover hover:scale-105 transition-transform duration-500" 
               />
             </motion.div>
@@ -51,17 +51,17 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="lg:w-1/2 mt-12 lg:mt-0"
           >
-            <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Our Sacred Legacy</span>
+            <span className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">World-Class Research Institute</span>
             <h2 className="text-4xl md:text-5xl font-bold text-text-main mb-6 leading-tight font-serif">
-              A Beacon of <span className="text-primary">Non-Violence</span> & Universal Peace
+              A Global Hub for <span className="text-primary">Cosmographic Research</span> & Peace
             </h2>
             <p className="text-text-muted text-lg mb-6 leading-relaxed">
-              Shri Digambar Jain Mandir, Hastinapur, stands as a testament to the eternal wisdom of Jainism. Inspired by the vision of <strong className="text-primary-dark">Ganinipramukh Shri Gyanmati Mataji</strong>, this sacred complex brings to life the profound cosmology of the Karananuyoga texts.
+              Jambudweep is more than a temple—it is the world's premier institute for <strong className="text-primary-dark">Jain Cosmographic Research (Karananuyoga)</strong>. Spreading over 30 acres, this complex brings to life the ancient mathematical and geographical models of the universe, offering a unique bridge between spiritual wisdom and modern scientific inquiry.
             </p>
             <div className="bg-primary/5 border-l-4 border-primary p-6 mb-8 rounded-r-xl shadow-sm">
-              <p className="text-primary-dark font-medium italic mb-2">"Historical Milestone"</p>
+              <p className="text-primary-dark font-medium italic mb-2">"The Science of the Universe"</p>
               <p className="text-text-main text-sm">
-                In 2008, the temple hosted the <strong className="text-primary-dark">World Peace Non-Violence Conference</strong>, inaugurated by the then <strong className="text-primary-dark">President of India, Smt. Pratibha Devi Singh Patil</strong>, marking its global significance in spreading the message of Ahimsa.
+                Established under the guidance of <strong className="text-primary-dark">Ganinipramukh Gyanmati Mataji</strong>, the institute has published over 300 authoritative volumes, documenting the precise physical and spiritual structures of the middle universe (Madhyalok).
               </p>
             </div>
             <div className="grid grid-cols-2 gap-8">

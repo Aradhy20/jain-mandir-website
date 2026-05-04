@@ -18,7 +18,7 @@ export default function Members() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold text-primary-dark mb-6"
+            className="text-3xl md:text-5xl font-bold text-primary-dark mb-6"
           >
             Trust Members
           </motion.h1>
@@ -38,7 +38,7 @@ export default function Members() {
               className="bg-surface rounded-2xl shadow-lg border border-gray-100 p-8 text-center hover:shadow-2xl transition-shadow duration-300 group"
             >
               <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary transition-colors">
-                <img 
+                <img loading="lazy" 
                   src={member.image} 
                   alt={member.name} 
                   className="w-full h-full object-cover"

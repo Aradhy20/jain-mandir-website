@@ -55,7 +55,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-10 rounded-[3rem] shadow-sm border border-gray-100 space-y-8"
+            className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[3rem] shadow-sm border border-gray-100 space-y-8"
           >
             <div className="flex gap-6">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -108,7 +108,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-surface p-10 rounded-[3rem] shadow-xl border border-primary/5"
+            className="bg-surface p-6 md:p-10 rounded-3xl md:rounded-[3rem] shadow-xl border border-primary/5"
           >
             <AnimatePresence mode="wait">
               {!submitted ? (
@@ -201,7 +201,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-[4rem] overflow-hidden shadow-2xl border-4 border-white h-[450px]"
+          className="rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl border-4 border-white h-[450px]"
         >
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487.653457194689!2d78.01633517616644!3d29.027151075452936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c74f555555555%3A0x7d6a5a0d33333333!2sJambudweep%20Jain%20Tirth!5e0!3m2!1sen!2sin!4v1714750000000!5m2!1sen!2sin" 

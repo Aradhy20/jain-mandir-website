@@ -56,7 +56,7 @@ export default function NewsBlogs() {
               {blogItems.map(blog => (
                 <div key={blog.id} className="flex flex-col sm:flex-row gap-6 group">
                   <div className="w-full sm:w-48 h-32 flex-shrink-0 overflow-hidden rounded-xl">
-                    <img src={blog.image} alt="Blog" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <img loading="lazy" src={blog.image} alt="Blog" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-text-main group-hover:text-primary transition mb-2">{blog.title}</h4>

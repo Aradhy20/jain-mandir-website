@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Book, Globe, Heart, ShieldCheck, Zap } from 'lucide-react';
 
+
 export default function About() {
   return (
     <div className="pt-20 pb-24 bg-background min-h-screen relative overflow-hidden">
@@ -43,11 +44,11 @@ export default function About() {
               className="relative"
             >
               <div className="absolute -inset-10 bg-primary/5 rounded-full blur-3xl"></div>
-              <div className="relative rounded-[4rem] overflow-hidden shadow-2xl border-[12px] border-white">
-                <img 
-                  src="https://digjainwiki.org/wp-content/uploads/2020/10/002_GyanMati_Mataji.png" 
+              <div className="relative rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl border-[12px] border-white aspect-[3/4]">
+                <img loading="lazy" 
+                  src="/jambudweep/gyanmati_mataji_writing.jpg" 
                   alt="Pujya Ganinipramukh Aryika Shri Gyanmati Mataji writing Jain scriptures" 
-                  className="w-full h-[600px] object-cover" 
+                  className="w-full h-full object-cover object-top" 
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
                   <p className="font-serif italic text-lg">"The creator of modern Jambudweep"</p>
@@ -75,7 +76,7 @@ export default function About() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[3rem] shadow-sm border border-gray-100 group hover:shadow-xl transition-all"
+                className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[3rem] shadow-sm border border-gray-100 group hover:shadow-xl transition-all"
               >
                 <div className={`${feature.color} w-16 h-16 rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
                   <feature.icon size={32} />
@@ -88,7 +89,7 @@ export default function About() {
         </section>
 
         {/* Institutional Pillars Grid */}
-        <section className="mb-32 bg-primary-dark text-white rounded-[5rem] p-12 md:p-24 relative overflow-hidden">
+        <section className="mb-32 bg-primary-dark text-white rounded-3xl md:rounded-[5rem] p-6 md:p-12 lg:p-24 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -121,8 +122,8 @@ export default function About() {
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <img src="/jambudweep/chandnamati_mataji.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl" alt="Scholarship" />
-              <img src="/jambudweep/ravindrakirti_swami.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl mt-8" alt="Management" />
+              <img loading="lazy" src="/jambudweep/chandnamati_mataji.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl" alt="Scholarship" />
+              <img loading="lazy" src="/jambudweep/ravindrakirti_swami.png" className="rounded-3xl h-80 w-full object-cover shadow-2xl mt-8" alt="Management" />
             </div>
           </div>
         </section>
@@ -160,9 +161,9 @@ export default function About() {
         </section>
 
         {/* World Record Section - Statue of Ahimsa */}
-        <section className="mb-32 bg-secondary/5 rounded-[4rem] p-12 md:p-24 flex flex-col lg:flex-row items-center gap-16">
+        <section className="mb-32 bg-secondary/5 rounded-3xl md:rounded-[4rem] p-6 md:p-12 lg:p-24 flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2">
-            <img src="/use-assets/22.jpg" className="rounded-[3rem] shadow-2xl h-[500px] w-full object-cover" alt="108ft Statue of Ahimsa at Mangi Tungi - A World Record Monument" />
+            <img loading="lazy" src="/use-assets/22.jpg" className="rounded-3xl md:rounded-[3rem] shadow-2xl h-[500px] w-full object-cover" alt="108ft Statue of Ahimsa at Mangi Tungi - A World Record Monument" />
           </div>
           <div className="lg:w-1/2">
             <div className="flex items-center gap-4 text-secondary mb-6">
@@ -182,36 +183,27 @@ export default function About() {
 
         {/* Legacy of Leadership - National Recognition */}
         <section className="pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-white p-12 md:p-20 rounded-[4rem] shadow-xl border border-gray-50">
-            <div>
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">National Recognition</span>
-              <h2 className="text-4xl font-bold text-text-main mb-8 font-serif leading-tight">A Voice for Universal Peace</h2>
-              <p className="text-lg text-text-muted leading-relaxed mb-8">
-                Ganinipramukh Shri Gyanmati Mataji's vision has been recognized and honored by the highest offices in India. Her message of Ahimsa (Non-violence) and religious harmony has bridged spiritual and political spheres, inspiring generations of leaders.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {['Atal Bihari Vajpayee', 'Pranab Mukherjee', 'A.P.J. Abdul Kalam', 'Indira Gandhi'].map((name, i) => (
-                  <span key={i} className="px-5 py-2 bg-primary/5 text-primary rounded-full text-sm font-bold border border-primary/10">
-                    {name}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative rounded-[3rem] overflow-hidden shadow-2xl"
-            >
-              <img 
-                src="https://bharatgaurav.in/wp-content/uploads/2022/07/1_FiFi0dTzwWybpQwsL6yi0w.png" 
-                alt="Gyanmati Mataji interacting with former PM Atal Bihari Vajpayee" 
-                className="w-full h-80 object-cover" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                <p className="text-white text-sm italic font-medium">Historical interaction with former PM Shri Atal Bihari Vajpayee</p>
-              </div>
-            </motion.div>
+          <div className="text-center mb-16">
+            <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">National Recognition</span>
+            <h2 className="text-4xl font-bold text-text-main mb-6 font-serif leading-tight">A Voice for Universal Peace</h2>
+            <p className="text-lg text-text-muted max-w-3xl mx-auto">
+              Ganinipramukh Shri Gyanmati Mataji's vision has been recognized and honored by the highest offices in India. Over the decades, numerous Presidents, Prime Ministers, and Chief Ministers have sought her blessings.
+            </p>
+          </div>
+          
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="break-inside-avoid bg-white rounded-[2rem] shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all border-[4px] border-white"
+              >
+                <img loading="lazy" src={`/use-assets/user-leaders/leader-${num}.png`} alt={`National Leader Interaction ${num}`} className="w-full h-auto" />
+              </motion.div>
+            ))}
           </div>
         </section>
       </div>

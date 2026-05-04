@@ -3,30 +3,36 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Maximize2, Share2, Download, Play, Pause } from 'lucide-react';
 
 const galleryData = [
-  { id: 1, src: '/use-assets/1.jpg', category: 'Architecture', title: 'Main Temple Entrance', desc: 'The grand entrance reflecting traditional Jain architectural excellence.' },
-  { id: 2, src: '/use-assets/2.jpg', category: 'Architecture', title: 'Intricate Carvings', desc: 'Detailed stone work on the temple pillars showcasing ancient craftsmanship.' },
-  { id: 3, src: '/use-assets/3.jpg', category: 'Temple', title: 'Golden Kalash', desc: 'The sacred golden spire reaching towards the heavens.' },
-  { id: 4, src: '/use-assets/4.jpg', category: 'Temple', title: 'Sanctum Sanctorum', desc: 'The peaceful inner chamber of the Shri Digambar Jain Mandir.' },
-  { id: 5, src: '/use-assets/5.jpg', category: 'Events', title: 'Mahavir Jayanti', desc: 'Annual celebrations bringing together thousands of devotees.' },
-  { id: 6, src: '/use-assets/6.jpg', category: 'Events', title: 'Evening Aarti', desc: 'The divine atmosphere during the evening lamp offering ceremony.' },
-  { id: 7, src: '/use-assets/7.jpg', category: 'Architecture', title: 'Marble Walkway', desc: 'Serene paths surrounding the temple complex for meditation.' },
-  { id: 8, src: '/use-assets/8.jpg', category: 'Campus', title: 'Lush Gardens', desc: 'The green surroundings providing a peaceful retreat.' },
-  { id: 9, src: '/use-assets/9.jpg', category: 'Campus', title: 'Peace Monument', desc: 'Symbolizing universal brotherhood and non-violence.' },
-  { id: 10, src: '/use-assets/10.jpg', category: 'Architecture', title: 'Temple Logo View', desc: 'A symmetrical perspective of the temple dome.' },
-  { id: 11, src: '/use-assets/11.jpg', category: 'Spiritual', title: 'Meditative Space', desc: 'A quiet corner designed for spiritual contemplation.' },
-  { id: 12, src: '/use-assets/12.jpg', category: 'Campus', title: 'Fountain of Life', desc: 'The central water feature symbolizing purity.' },
-  { id: 13, src: '/use-assets/13.jpg', category: 'Architecture', title: 'Ceiling Art', desc: 'Vibrant paintings depicting the lives of Tirthankaras.' },
-  { id: 14, src: '/use-assets/14.jpg', category: 'Architecture', title: 'Night Illumination', desc: 'The temple glowing under the stars during festivals.' },
+  { id: 1, src: '/use-assets/1.jpg', category: 'Architecture', title: 'Jambudweep Main Entrance', desc: 'The grand entrance to the 30-acre spiritual campus.' },
+  { id: 2, src: '/use-assets/2.jpg', category: 'Architecture', title: 'Ancient Pillars', desc: 'Detailed stone carvings representing the eternal heritage.' },
+  { id: 3, src: '/use-assets/3.jpg', category: 'Campus', title: 'Serene Pathways', desc: 'Peaceful walking paths within the Jambudweep complex.' },
+  { id: 4, src: '/use-assets/4.jpg', category: 'Spiritual', title: 'Devotional Assembly', desc: 'A gathering of devotees engaged in deep prayer.' },
+  { id: 5, src: '/use-assets/5.jpg', category: 'Architecture', title: 'Carved Ceilings', desc: 'Intricate marble work adorning the main temple ceilings.' },
+  { id: 6, src: '/use-assets/6.jpg', category: 'Spiritual', title: 'Daily Rituals', desc: 'Sacred ceremonies performed by the temple priests.' },
+  { id: 7, src: '/use-assets/7.jpg', category: 'Events', title: 'Festival Celebration', desc: 'Joyous moments during the annual religious festivals.' },
+  { id: 8, src: '/use-assets/8.jpg', category: 'Campus', title: 'Sacred Sarovar', desc: 'The holy rivers and lakes surrounding the Jambudweep model.' },
+  { id: 9, src: '/use-assets/9.jpg', category: 'Architecture', title: 'Temple Spire', desc: 'The towering shikhara reaching towards the heavens.' },
+  { id: 10, src: '/use-assets/10.jpg', category: 'Spiritual', title: 'Guru Blessings', desc: 'Devotees receiving wisdom and blessings from the Mataji.' },
+  { id: 11, src: '/use-assets/11.jpg', category: 'Architecture', title: 'Lotus Temple (Kamal Mandir)', desc: 'A stunning architectural symbol of purity, shaped like a blooming lotus.' },
+  { id: 12, src: '/use-assets/12.jpg', category: 'Campus', title: 'Meditation Temple', desc: 'A serene grass-covered dome designed for deep contemplation.' },
+  { id: 13, src: '/use-assets/13.jpg', category: 'Architecture', title: 'Navgrah Jinayalaya', desc: 'The sacred temple dedicated to the nine celestial bodies.' },
+  { id: 14, src: '/use-assets/14.jpg', category: 'Architecture', title: 'Sumeru Parvat Detail', desc: 'Close-up of the 101ft tall model of Mount Sumeru.' },
   { id: 15, src: '/use-assets/15.jpg', category: 'Spiritual', title: 'Sacred Rituals', desc: 'Devotees participating in the daily spiritual practices.' },
   { id: 16, src: '/use-assets/16.jpg', category: 'Events', title: 'Cultural Program', desc: 'Traditional performances during the foundation day.' },
-  { id: 17, src: '/use-assets/17.jpg', category: 'Architecture', title: 'Outer Facade', desc: 'The magnificent scale of the Hastinapur temple complex.' },
+  { id: 17, src: '/use-assets/17.jpg', category: 'Architecture', title: 'Institute Facade', desc: 'The administrative and research hub of Trilok Shodh Sansthan.' },
   { id: 18, src: '/use-assets/18.jpg', category: 'Campus', title: 'Pilgrim Rest House', desc: 'Modern facilities for visitors from around the world.' },
   { id: 19, src: '/use-assets/19.jpg', category: 'Architecture', title: 'Symmetrical Beauty', desc: 'Perfect balance in modern Jain temple design.' },
   { id: 20, src: '/use-assets/20.jpg', category: 'Architecture', title: 'Pillar Detail', desc: 'Close-up of the symbolic motifs carved in stone.' },
-  { id: 21, src: '/use-assets/21.jpg', category: 'Spiritual', title: 'Divine Blessing', desc: 'A capturing moment of peace and devotion.' },
-  { id: 22, src: '/use-assets/22.jpg', category: 'Architecture', title: 'Sumeru View', desc: 'The majestic scale of the 101ft Mount Sumeru model.' },
+  { id: 21, src: '/use-assets/21.jpg', category: 'Spiritual', title: 'Panchkalyanak Scene', desc: 'A capturing moment of peace and devotion during a grand ritual.' },
+  { id: 22, src: '/use-assets/22.jpg', category: 'Architecture', title: '108ft Statue of Ahimsa', desc: 'The world\'s tallest single-stone statue of Lord Rishabhdev.' },
   { id: 23, src: '/use-assets/23.jpg', category: 'Spiritual', title: 'Holy Chant', desc: 'The resonance of spiritual energy in the main hall.' },
-  { id: 24, src: '/use-assets/24.jpg', category: 'Spiritual', title: 'Eternal Peace', desc: 'Capturing the essence of Jain spiritual life.' }
+  { id: 24, src: '/use-assets/24.jpg', category: 'Spiritual', title: 'Eternal Peace', desc: 'Capturing the essence of Jain spiritual life.' },
+  { id: 25, src: '/jambudweep/page_1.png', category: 'Architecture', title: 'Historical Map', desc: 'Ancient geographical map mapping the Jambudweep continent.' },
+  { id: 26, src: '/use-assets/gallery-user/1.webp', category: 'Architecture', title: 'Temple Entrance', desc: 'The majestic entrance gateway of the Jambudweep complex.' },
+  { id: 27, src: '/use-assets/gallery-user/2.webp', category: 'Architecture', title: 'Main Temple Facade', desc: 'Beautifully carved stone facade showcasing intricate Jain architecture.' },
+  { id: 28, src: '/use-assets/gallery-user/3.webp', category: 'Campus', title: 'Lotus Temple View', desc: 'The stunning Kamal Mandir (Lotus Temple) representing purity.' },
+  { id: 29, src: '/use-assets/gallery-user/4.webp', category: 'Architecture', title: 'Statue of Ahimsa View', desc: 'The monumental world-record statue of Lord Rishabhdev.' },
+  { id: 32, src: '/use-assets/gallery-user/7.webp', category: 'Events', title: 'Night Illumination', desc: 'The temple complex glowing beautifully under the night sky.' }
 ];
 
 const categories = ['All', 'Architecture', 'Temple', 'Events', 'Spiritual', 'Campus'];
@@ -177,7 +183,7 @@ export default function GalleryPage() {
             </button>
 
             {/* Controls */}
-            <div className="absolute left-8 right-8 top-1/2 -translate-y-1/2 flex justify-between z-[110] pointer-events-none">
+            <div className="absolute left-4 right-4 md:left-8 md:right-8 top-1/2 -translate-y-1/2 flex justify-between z-[110] pointer-events-none">
               <button 
                 className="pointer-events-auto bg-white/5 hover:bg-primary/20 text-white p-4 rounded-full backdrop-blur-md border border-white/10 transition-all hover:scale-110 active:scale-95"
                 onClick={(e) => { e.stopPropagation(); handlePrev(); }}
@@ -205,7 +211,7 @@ export default function GalleryPage() {
                 className="relative max-w-full max-h-full flex flex-col items-center"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img 
+                <img loading="lazy" 
                   src={filteredImages[selectedIndex].src} 
                   alt={filteredImages[selectedIndex].title}
                   className="max-h-[60vh] md:max-h-[75vh] w-auto rounded-2xl shadow-[0_0_100px_rgba(0,0,0,0.5)] border border-white/10"
