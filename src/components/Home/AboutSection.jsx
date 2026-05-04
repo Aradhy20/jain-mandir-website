@@ -56,12 +56,12 @@ export default function AboutSection() {
               A Beacon of <span className="text-primary">Non-Violence</span> & Universal Peace
             </h2>
             <p className="text-text-muted text-lg mb-6 leading-relaxed">
-              Shri Digambar Jain Mandir, Hastinapur, stands as a testament to the eternal wisdom of Jainism. Inspired by the vision of **Ganinipramukh Shri Gyanmati Mataji**, this sacred complex brings to life the profound cosmology of the Karananuyoga texts.
+              Shri Digambar Jain Mandir, Hastinapur, stands as a testament to the eternal wisdom of Jainism. Inspired by the vision of <strong className="text-primary-dark">Ganinipramukh Shri Gyanmati Mataji</strong>, this sacred complex brings to life the profound cosmology of the Karananuyoga texts.
             </p>
             <div className="bg-primary/5 border-l-4 border-primary p-6 mb-8 rounded-r-xl shadow-sm">
               <p className="text-primary-dark font-medium italic mb-2">"Historical Milestone"</p>
               <p className="text-text-main text-sm">
-                In 2008, the temple hosted the **World Peace Non-Violence Conference**, inaugurated by the then **President of India, Smt. Pratibha Devi Singh Patil**, marking its global significance in spreading the message of Ahimsa.
+                In 2008, the temple hosted the <strong className="text-primary-dark">World Peace Non-Violence Conference</strong>, inaugurated by the then <strong className="text-primary-dark">President of India, Smt. Pratibha Devi Singh Patil</strong>, marking its global significance in spreading the message of Ahimsa.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-8">

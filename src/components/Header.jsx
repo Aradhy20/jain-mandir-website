@@ -36,10 +36,15 @@ export default function Header() {
                 key={item.name} 
                 to={item.path}
                 className={({ isActive }) => 
-                  `text-sm font-semibold transition-colors hover:text-primary ${isActive ? 'text-primary' : 'text-text-main'}`
+                  `relative text-sm font-semibold transition-all duration-300 hover:text-primary focus:outline-none group ${isActive ? 'text-primary' : 'text-text-main'}`
                 }
               >
-                {item.name}
+                {({ isActive }) => (
+                  <>
+                    {item.name}
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                  </>
+                )}
               </NavLink>
             ))}
             <Link to="/donations" className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full font-medium transition flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-300" aria-label="Support the Mandir - Donate Now">

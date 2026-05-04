@@ -1,90 +1,267 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Maximize2 } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Maximize2, Share2, Download, Play, Pause } from 'lucide-react';
 
-const allImages = [
-  '/use-assets/1.jpg', '/use-assets/2.jpg', '/use-assets/3.jpg',
-  '/use-assets/4.jpg', '/use-assets/5.jpg', '/use-assets/6.jpg',
-  '/use-assets/7.jpg', '/use-assets/8.jpg', '/use-assets/9.jpg',
-  '/use-assets/10.jpg', '/use-assets/11.jpg', '/use-assets/12.jpg',
-  '/use-assets/13.jpg', '/use-assets/14.jpg', '/use-assets/15.jpg',
-  '/use-assets/16.jpg', '/use-assets/17.jpg', '/use-assets/18.jpg',
-  '/use-assets/19.jpg', '/use-assets/20.jpg', '/use-assets/21.jpg',
-  '/use-assets/22.jpg', '/use-assets/23.jpg', '/use-assets/24.jpg'
+const galleryData = [
+  { id: 1, src: '/use-assets/1.jpg', category: 'Architecture', title: 'Main Temple Entrance', desc: 'The grand entrance reflecting traditional Jain architectural excellence.' },
+  { id: 2, src: '/use-assets/2.jpg', category: 'Architecture', title: 'Intricate Carvings', desc: 'Detailed stone work on the temple pillars showcasing ancient craftsmanship.' },
+  { id: 3, src: '/use-assets/3.jpg', category: 'Temple', title: 'Golden Kalash', desc: 'The sacred golden spire reaching towards the heavens.' },
+  { id: 4, src: '/use-assets/4.jpg', category: 'Temple', title: 'Sanctum Sanctorum', desc: 'The peaceful inner chamber of the Shri Digambar Jain Mandir.' },
+  { id: 5, src: '/use-assets/5.jpg', category: 'Events', title: 'Mahavir Jayanti', desc: 'Annual celebrations bringing together thousands of devotees.' },
+  { id: 6, src: '/use-assets/6.jpg', category: 'Events', title: 'Evening Aarti', desc: 'The divine atmosphere during the evening lamp offering ceremony.' },
+  { id: 7, src: '/use-assets/7.jpg', category: 'Architecture', title: 'Marble Walkway', desc: 'Serene paths surrounding the temple complex for meditation.' },
+  { id: 8, src: '/use-assets/8.jpg', category: 'Campus', title: 'Lush Gardens', desc: 'The green surroundings providing a peaceful retreat.' },
+  { id: 9, src: '/use-assets/9.jpg', category: 'Campus', title: 'Peace Monument', desc: 'Symbolizing universal brotherhood and non-violence.' },
+  { id: 10, src: '/use-assets/10.jpg', category: 'Architecture', title: 'Temple Logo View', desc: 'A symmetrical perspective of the temple dome.' },
+  { id: 11, src: '/use-assets/11.jpg', category: 'Spiritual', title: 'Meditative Space', desc: 'A quiet corner designed for spiritual contemplation.' },
+  { id: 12, src: '/use-assets/12.jpg', category: 'Campus', title: 'Fountain of Life', desc: 'The central water feature symbolizing purity.' },
+  { id: 13, src: '/use-assets/13.jpg', category: 'Architecture', title: 'Ceiling Art', desc: 'Vibrant paintings depicting the lives of Tirthankaras.' },
+  { id: 14, src: '/use-assets/14.jpg', category: 'Architecture', title: 'Night Illumination', desc: 'The temple glowing under the stars during festivals.' },
+  { id: 15, src: '/use-assets/15.jpg', category: 'Spiritual', title: 'Sacred Rituals', desc: 'Devotees participating in the daily spiritual practices.' },
+  { id: 16, src: '/use-assets/16.jpg', category: 'Events', title: 'Cultural Program', desc: 'Traditional performances during the foundation day.' },
+  { id: 17, src: '/use-assets/17.jpg', category: 'Architecture', title: 'Outer Facade', desc: 'The magnificent scale of the Hastinapur temple complex.' },
+  { id: 18, src: '/use-assets/18.jpg', category: 'Campus', title: 'Pilgrim Rest House', desc: 'Modern facilities for visitors from around the world.' },
+  { id: 19, src: '/use-assets/19.jpg', category: 'Architecture', title: 'Symmetrical Beauty', desc: 'Perfect balance in modern Jain temple design.' },
+  { id: 20, src: '/use-assets/20.jpg', category: 'Architecture', title: 'Pillar Detail', desc: 'Close-up of the symbolic motifs carved in stone.' },
+  { id: 21, src: '/use-assets/21.jpg', category: 'Spiritual', title: 'Divine Blessing', desc: 'A capturing moment of peace and devotion.' },
+  { id: 22, src: '/use-assets/22.jpg', category: 'Architecture', title: 'Sumeru View', desc: 'The majestic scale of the 101ft Mount Sumeru model.' },
+  { id: 23, src: '/use-assets/23.jpg', category: 'Spiritual', title: 'Holy Chant', desc: 'The resonance of spiritual energy in the main hall.' },
+  { id: 24, src: '/use-assets/24.jpg', category: 'Spiritual', title: 'Eternal Peace', desc: 'Capturing the essence of Jain spiritual life.' }
 ];
 
+const categories = ['All', 'Architecture', 'Temple', 'Events', 'Spiritual', 'Campus'];
+
 export default function GalleryPage() {
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [filter, setFilter] = useState('All');
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isSlideshowActive, setIsSlideshowActive] = useState(false);
+
+  const filteredImages = filter === 'All' 
+    ? galleryData 
+    : galleryData.filter(img => img.category === filter);
+
+  const handleNext = useCallback(() => {
+    setSelectedIndex((prev) => (prev + 1) % filteredImages.length);
+  }, [filteredImages.length]);
+
+  const handlePrev = useCallback(() => {
+    setSelectedIndex((prev) => (prev - 1 + filteredImages.length) % filteredImages.length);
+  }, [filteredImages.length]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (selectedIndex === null) return;
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'Escape') setSelectedIndex(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex, handleNext, handlePrev]);
+
+  // Slideshow logic
+  useEffect(() => {
+    let interval;
+    if (isSlideshowActive && selectedIndex !== null) {
+      interval = setInterval(handleNext, 4000);
+    }
+    return () => clearInterval(interval);
+  }, [isSlideshowActive, selectedIndex, handleNext]);
 
   return (
     <div className="pt-24 pb-20 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header Section */}
         <div className="text-center mb-16">
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-primary font-bold tracking-[0.4em] uppercase text-xs mb-4 block"
+          >
+            Visual Chronicles
+          </motion.span>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-primary-dark mb-6 font-serif"
+            className="text-5xl md:text-7xl font-bold text-primary-dark mb-8 font-serif"
           >
-            Complete Photo Gallery
+            Divine <span className="italic text-text-main">Gallery</span>
           </motion.h1>
-          <p className="text-xl text-text-muted max-w-2xl mx-auto">
-            Explore the beautiful architecture, events, and serene moments captured at the Shri Digambar Jain Mandir.
-          </p>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed"
+          >
+            Explore the spiritual serenity and architectural grandeur of Jambudweep Hastinapur through our curated collection.
+          </motion.p>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-          {allImages.map((src, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (index % 10) * 0.05 }}
-              onClick={() => setSelectedImg(src)}
-              className="break-inside-avoid rounded-2xl overflow-hidden shadow-lg group relative bg-gray-100 cursor-pointer"
+        {/* Filter Bar */}
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                filter === cat 
+                  ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' 
+                  : 'bg-surface text-text-muted hover:bg-gray-100 hover:text-primary border border-gray-100'
+              }`}
             >
-              <img 
-                src={src} 
-                alt={`Architecture and events at Shri Digambar Jain Mandir - Photo ${index + 1}`} 
-                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" 
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded-full text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <Maximize2 size={24} />
-                </div>
-              </div>
-            </motion.div>
+              {cat}
+            </button>
           ))}
         </div>
+
+        {/* Masonry Grid */}
+        <motion.div 
+          layout
+          className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredImages.map((image, index) => (
+              <motion.div
+                key={image.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                onClick={() => setSelectedIndex(index)}
+                className="break-inside-avoid group relative rounded-3xl overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500 bg-surface"
+              >
+                <img 
+                  src={image.src} 
+                  alt={image.title}
+                  loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-110 group-hover:blur-[2px] transition-all duration-700" 
+                />
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
+                  <span className="text-secondary font-bold text-[10px] uppercase tracking-widest mb-2">{image.category}</span>
+                  <h3 className="text-xl font-bold text-white mb-2">{image.title}</h3>
+                  <div className="h-0.5 w-12 bg-secondary rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                </div>
+                
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                  <div className="bg-white/20 backdrop-blur-md border border-white/30 p-2.5 rounded-full text-white">
+                    <Maximize2 size={18} />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Premium Lightbox Modal */}
       <AnimatePresence>
-        {selectedImg && (
+        {selectedIndex !== null && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
-            onClick={() => setSelectedImg(null)}
+            className="fixed inset-0 z-[100] bg-black/98 backdrop-blur-xl flex items-center justify-center"
           >
+            {/* Close Button */}
             <button 
-              className="absolute top-6 right-6 text-white hover:text-primary transition p-2"
-              onClick={() => setSelectedImg(null)}
-              aria-label="Close lightbox"
+              className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[110] p-2 hover:bg-white/10 rounded-full"
+              onClick={() => setSelectedIndex(null)}
+              aria-label="Close"
             >
-              <X size={40} />
+              <X size={32} />
             </button>
-            <motion.img 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              src={selectedImg} 
-              alt="Expanded view"
-              className="max-h-[90vh] max-w-full rounded-lg shadow-2xl object-contain"
-              onClick={(e) => e.stopPropagation()}
-            />
+
+            {/* Controls */}
+            <div className="absolute left-8 right-8 top-1/2 -translate-y-1/2 flex justify-between z-[110] pointer-events-none">
+              <button 
+                className="pointer-events-auto bg-white/5 hover:bg-primary/20 text-white p-4 rounded-full backdrop-blur-md border border-white/10 transition-all hover:scale-110 active:scale-95"
+                onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                aria-label="Previous"
+              >
+                <ChevronLeft size={32} />
+              </button>
+              <button 
+                className="pointer-events-auto bg-white/5 hover:bg-primary/20 text-white p-4 rounded-full backdrop-blur-md border border-white/10 transition-all hover:scale-110 active:scale-95"
+                onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                aria-label="Next"
+              >
+                <ChevronRight size={32} />
+              </button>
+            </div>
+
+            {/* Image Container */}
+            <div className="relative w-full h-full flex items-center justify-center p-4 md:p-20 overflow-hidden" onClick={() => setSelectedIndex(null)}>
+              <motion.div
+                key={filteredImages[selectedIndex].id}
+                initial={{ opacity: 0, scale: 0.9, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 1.1, x: -20 }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="relative max-w-full max-h-full flex flex-col items-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={filteredImages[selectedIndex].src} 
+                  alt={filteredImages[selectedIndex].title}
+                  className="max-h-[60vh] md:max-h-[75vh] w-auto rounded-2xl shadow-[0_0_100px_rgba(0,0,0,0.5)] border border-white/10"
+                />
+                
+                {/* Meta Information */}
+                <div className="mt-8 text-center max-w-2xl px-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <span className="text-secondary font-bold text-xs uppercase tracking-[0.3em] mb-3 block">
+                      {filteredImages[selectedIndex].category}
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">
+                      {filteredImages[selectedIndex].title}
+                    </h2>
+                    <p className="text-white/60 text-base md:text-lg leading-relaxed mb-8">
+                      {filteredImages[selectedIndex].desc}
+                    </p>
+                    
+                    {/* Interaction Bar */}
+                    <div className="flex items-center justify-center gap-6">
+                      <button 
+                        onClick={() => setIsSlideshowActive(!isSlideshowActive)}
+                        className={`flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 transition-all ${
+                          isSlideshowActive ? 'bg-primary text-white border-primary' : 'bg-white/5 text-white/70 hover:bg-white/10'
+                        }`}
+                      >
+                        {isSlideshowActive ? <Pause size={18} /> : <Play size={18} />}
+                        <span className="text-xs font-bold uppercase tracking-widest">{isSlideshowActive ? 'Pause' : 'Slideshow'}</span>
+                      </button>
+                      <button className="p-3 bg-white/5 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all">
+                        <Download size={20} />
+                      </button>
+                      <button className="p-3 bg-white/5 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all">
+                        <Share2 size={20} />
+                      </button>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Progress Indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-1.5 z-[110]">
+              {filteredImages.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`h-1 rounded-full transition-all duration-300 ${
+                    idx === selectedIndex ? 'w-8 bg-primary' : 'w-2 bg-white/20'
+                  }`}
+                />
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

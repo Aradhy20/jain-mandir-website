@@ -11,12 +11,12 @@ const causes = [
   {
     icon: <GraduationCap className="text-primary" size={32} />,
     title: "Educational Support",
-    desc: "Funding for our schools and research wings like the **Jambudweep Institute of Cosmographic Research (DJICR)**."
+    desc: "Funding for our schools and research wings like the <strong className='text-primary-dark'>Jambudweep Institute of Cosmographic Research (DJICR)</strong>."
   },
   {
     icon: <HeartPulse className="text-primary" size={32} />,
     title: "Medical Welfare",
-    desc: "Supporting the **Shri Rishabhdev Janseva Sansthan**, which manages charitable hospitals and medical camps."
+    desc: "Supporting the <strong className='text-primary-dark'>Shri Rishabhdev Janseva Sansthan</strong>, which manages charitable hospitals and medical camps."
   },
   {
     icon: <Heart className="text-primary" size={32} />,
@@ -36,7 +36,7 @@ export default function Donations() {
         >
           <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Seva & Support</span>
           <h1 className="text-4xl md:text-5xl font-bold text-text-main mb-6 font-serif">Contribute to the Mission</h1>
-          <p className="text-text-muted text-lg max-w-2xl mx-auto">Your support helps the **Digambar Jain Trilok Shodh Sansthan** in its global mission of peace and education.</p>
+          <p className="text-text-muted text-lg max-w-2xl mx-auto">Your support helps the <strong className="text-primary-dark">Digambar Jain Trilok Shodh Sansthan</strong> in its global mission of peace and education.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">

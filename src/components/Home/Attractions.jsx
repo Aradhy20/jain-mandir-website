@@ -15,7 +15,7 @@ const attractions = [
   {
     title: "Lotus Temple (Kamal Mandir)",
     desc: "A stunning architectural symbol of purity, shaped like a blooming lotus.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/23/Lotus_Temple_at_Jambudweep.JPG"
+    image: "/use-assets/kamal_mandir_2.mp4"
   }
 ];
 

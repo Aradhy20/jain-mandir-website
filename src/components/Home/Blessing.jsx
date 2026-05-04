@@ -21,7 +21,7 @@ export default function Blessing() {
                 "Spreading the Message of Peace & Ahimsa Across the World"
               </h2>
               <p className="text-white/80 text-lg leading-relaxed mb-10 italic">
-                Under the profound guidance of **Pujya Ganinipramukh Aryika Shri Gyanmati Mataji**, the Digambar Jain Trilok Shodh Sansthan continues its mission of spiritual awakening and the restoration of our sacred heritage.
+                Under the profound guidance of Pujya Ganinipramukh Aryika Shri Gyanmati Mataji, the Digambar Jain Trilok Shodh Sansthan continues its mission of spiritual awakening and the restoration of our sacred heritage.
               </p>
               <div className="flex items-center gap-6">
                 <div className="w-16 h-1 bg-secondary"></div>
@@ -38,7 +38,7 @@ export default function Blessing() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-secondary/20 rounded-full blur-2xl group-hover:bg-secondary/40 transition-all duration-700"></div>
                 <img 
-                  src="https://www.worldrecordsindia.com/wp-content/uploads/2020/11/HH_Ganini_Pramukh_Shri_Gyanmati_Mataji_World_Record.jpg" 
+                  src="/jambudweep/gyanmati_mataji.png" 
                   alt="Portrait of Pujya Ganinipramukh Aryika Shri Gyanmati Mataji - Spiritual Leader" 
                   className="relative w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-8 border-white/10 shadow-2xl group-hover:scale-105 transition-transform duration-500" 
                 />

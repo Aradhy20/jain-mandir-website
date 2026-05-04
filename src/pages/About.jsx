@@ -29,7 +29,7 @@ export default function About() {
                 Where Ancient <span className="text-primary">Wisdom</span> Meets Science
               </h1>
               <p className="text-xl text-text-muted leading-relaxed mb-10">
-                Jambudweep Hastinapur is not just a temple; it is a global center for **Jain Cosmographic Research** and spiritual awakening, envisioned by the greatest Jain saint of our time.
+                Jambudweep Hastinapur is not just a temple; it is a global center for <strong className="text-primary-dark">Jain Cosmographic Research</strong> and spiritual awakening, envisioned by the greatest Jain saint of our time.
               </p>
               <div className="flex gap-4">
                 <button className="bg-primary text-white px-8 py-4 rounded-full font-bold shadow-xl hover:bg-primary-dark transition">Explore History</button>
