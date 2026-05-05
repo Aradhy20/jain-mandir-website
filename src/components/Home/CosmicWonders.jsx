@@ -1,32 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe, MapPin, Milestone, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const wonders = [
   {
     title: "The Lotus Temple (Kamal Mandir)",
-    description: "A breathtaking architectural marvel shaped like a blooming lotus, representing the purity of the soul and the divine path to liberation.",
+    description: "A breathtaking architectural marvel shaped like a blooming lotus, representing the purity of the soul and the divine path to liberation. This temple sits elegantly in a pristine water body and houses a majestic 10.25-foot idol of Bhagwan Mahavir, creating an atmosphere of deep tranquility and spiritual awakening.",
     image: "/use-assets/lotus_temple_wiki.jpeg",
     icon: Globe,
     stats: "Inaugurated 1985"
   },
   {
     title: "Mount Sumeru (Sumeru Parvat)",
-    description: "A 101-foot tall representation of the center of the universe as described in Jain cosmology, featuring intricate carvings and spiritual symbolism.",
+    description: "A 101-foot tall representation of the center of the universe as described in ancient Jain cosmology. Crafted from light pink marble, it features 136 internal steps and 16 distinct Jinayalyas (shrines). It serves as a monumental physical manifestation of the sacred Trilok, allowing devotees to physically climb and experience the spiritual ascent.",
     image: "/use-assets/18.jpg",
     icon: Zap,
     stats: "101 Feet Tall"
   },
   {
     title: "108ft Statue of Ahimsa",
-    description: "The world's tallest single-stone statue of Lord Rishabhdev, a Guinness World Record monument symbolizing universal non-violence.",
+    description: "The world's tallest single-stone statue of Lord Rishabhdev, located at Mangi-Tungi. This Guinness World Record monument symbolizes universal non-violence (Ahimsa) and stands as a testament to unparalleled devotion and modern engineering, inspired by the vision of Ganinipramukh Shri Gyanmati Mataji.",
     image: "/use-assets/22.jpg",
     icon: Milestone,
     stats: "World Record"
   },
   {
     title: "Meditation Temple (Dhyan Mandir)",
-    description: "A serene, grass-covered dome designed for deep contemplation and spiritual research, embodying the tranquility of ancient Jain forests.",
+    description: "A serene, grass-covered dome designed specifically for deep contemplation and spiritual research. Embodying the tranquility of ancient Jain forests, it provides seekers with a vibrationally pure environment to practice mindfulness, disconnect from worldly attachments, and connect with their inner consciousness.",
     image: "/use-assets/image.png",
     icon: MapPin,
     stats: "Research Hub"
@@ -99,10 +100,10 @@ export default function CosmicWonders() {
                 <p className="text-text-muted leading-relaxed mb-6">
                   {wonder.description}
                 </p>
-                <div className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest group/btn cursor-pointer">
+                <Link to="/jambudweep" className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest group/btn cursor-pointer inline-flex w-fit">
                   Learn More
                   <div className="w-8 h-[2px] bg-primary group-hover/btn:w-12 transition-all"></div>
-                </div>
+                </Link>
               </div>
             </motion.div>
           ))}
