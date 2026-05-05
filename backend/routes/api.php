@@ -9,5 +9,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/contact', [ContactController::class, 'submit']);
+Route::post('/contact', [ContactController::class, 'submit'])->middleware('throttle:3,1');
 Route::get('/status', [ContactController::class, 'status']);
