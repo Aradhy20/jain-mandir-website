@@ -568,44 +568,44 @@ export default function Jambudweep() {
         </section>
 
         {/* 🏡 Pilgrim Facilities Section */}
-        <section className="py-32 bg-primary-dark text-white rounded-3xl md:rounded-[5rem] mx-4 md:mx-10 relative overflow-hidden">
+        <section className="py-20 md:py-24 bg-primary-dark text-white rounded-3xl md:rounded-[5rem] mx-4 md:mx-10 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
             <img loading="lazy" src="/use-assets/16.jpg" alt="background" className="w-full h-full object-cover" />
           </div>
           <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
               <div className="lg:w-1/2">
                 <span className="text-secondary font-bold tracking-widest uppercase text-xs mb-4 block">Pilgrim Comfort</span>
-                <h2 className="text-3xl md:text-5xl md:text-7xl font-serif mb-8">Sacred <span className="text-secondary">Hospitality</span></h2>
-                <p className="text-white/60 text-lg mb-12 leading-relaxed">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-6">Sacred <span className="text-secondary">Hospitality</span></h2>
+                <p className="text-white/60 text-lg mb-10 leading-relaxed">
                   Experience a stay that balances spiritual discipline with modern comfort. Our facilities are designed to support your inward journey.
                 </p>
-                <div className="space-y-10">
+                <div className="space-y-8">
                   {facilities.map((item, idx) => (
-                    <div key={idx} className="flex gap-8 items-start">
-                      <div className="w-28 h-28 flex-shrink-0 rounded-[2rem] overflow-hidden border-2 border-white/10">
+                    <div key={idx} className="flex gap-6 items-start">
+                      <div className="w-24 h-24 flex-shrink-0 rounded-[1.5rem] overflow-hidden border-2 border-white/10">
                         <CroppedImage src={item.image} alt={item.title} crop={item.crop} className="w-full h-full" />
                       </div>
                       <div>
-                        <h4 className="text-2xl font-serif text-secondary mb-2">{item.title}</h4>
+                        <h4 className="text-xl md:text-2xl font-serif text-secondary mb-2">{item.title}</h4>
                         <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="lg:w-1/2 relative">
-                <div className="aspect-[4/5] rounded-3xl md:rounded-[4rem] overflow-hidden border-[12px] border-white/5 shadow-3xl">
+              <div className="lg:w-1/2 relative mt-12 lg:mt-0">
+                <div className="aspect-square lg:aspect-[4/3] xl:aspect-square rounded-3xl md:rounded-[3rem] overflow-hidden border-[8px] border-white/5 shadow-3xl">
                   <CroppedImage 
-                  src="/jambudweep/page_17.png" 
-                  alt="Guest House" 
-                  crop={{ x: 16, y: 30, zoom: 5.5 }}
-                  className="w-full h-full"
-                />
+                    src="/jambudweep/page_17.png" 
+                    alt="Guest House" 
+                    crop={{ x: 16, y: 30, zoom: 5.5 }}
+                    className="w-full h-full"
+                  />
                 </div>
-                <div className="absolute -bottom-10 -right-10 bg-secondary p-6 md:p-10 rounded-3xl md:rounded-[3rem] text-primary-dark shadow-2xl border-4 border-primary-dark">
-                  <p className="text-3xl md:text-5xl font-serif font-bold">200+</p>
-                  <p className="text-xs uppercase font-bold tracking-[0.2em]">Modern Suites</p>
+                <div className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 bg-secondary p-5 md:p-8 rounded-2xl md:rounded-[2.5rem] text-primary-dark shadow-2xl border-4 border-primary-dark">
+                  <p className="text-3xl md:text-4xl font-serif font-bold">200+</p>
+                  <p className="text-[10px] md:text-xs uppercase font-bold tracking-[0.2em] mt-1">Modern Suites</p>
                 </div>
               </div>
             </div>
