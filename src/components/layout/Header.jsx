@@ -23,7 +23,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center gap-3" aria-label="Shri Digambar Jain Atishaya Kshetra, Jambudweep Home">
-            <img loading="lazy" src="/use-assets/10.jpg" alt="" className="h-12 w-12 rounded-full object-cover shadow-md border-2 border-primary" />
+            <img loading="lazy" src="/use-assets/logo.jpg" alt="Jambudweep Logo" className="h-12 w-12 object-contain bg-white rounded shadow-md border border-primary/20" />
             <div className="flex flex-col">
               <span className="font-serif font-bold text-xl lg:text-2xl text-primary-dark leading-tight">Shri Digambar Jain</span>
               <span className="text-[10px] lg:text-xs font-medium tracking-[0.1em] text-text-muted">Atishaya Kshetra, Jambudweep</span>

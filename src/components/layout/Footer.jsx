@@ -11,7 +11,7 @@ export default function Footer() {
           
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img loading="lazy" src="/use-assets/10.jpg" alt="" className="h-10 w-10 rounded-full" />
+              <img loading="lazy" src="/use-assets/logo.jpg" alt="Jambudweep Logo" className="h-10 w-10 object-contain bg-white rounded" />
               <span className="font-serif font-bold text-2xl text-primary">Jambudweep</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
