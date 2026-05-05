@@ -59,7 +59,47 @@ export default function About() {
           </div>
         </section>
 
-        {/* The Cosmic Vision Section */}
+        {/* Hastinapur: The Eternal Tirth Section */}
+        <section className="py-20 mb-24 bg-white rounded-3xl md:rounded-[4rem] overflow-hidden shadow-sm border border-gray-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-8 md:p-16"
+            >
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Ancient Legacy</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-text-main mb-8 font-serif leading-tight">
+                Hastinapur: The <span className="text-primary">Eternal</span> Tirth
+              </h2>
+              <div className="space-y-6 text-lg text-text-muted leading-relaxed">
+                <p>
+                  Hastinapur is one of the most sacred pilgrimage sites in the world, renowned as the <strong>Kalyanak Bhumi</strong> of the 16th, 17th, and 18th Tirthankaras—<strong>Lord Shantinatha</strong>, <strong>Lord Kunthunatha</strong>, and <strong>Lord Aranatha</strong>. 
+                </p>
+                <p>
+                  Each of these divine souls celebrated four major Kalyanaks (Garbha, Janma, Tap, and Gyan) on this holy land. It is also the site of <strong>Lord Rishabhdev's</strong> first Ahar (food intake) after his year-long fast, broken with sugarcane juice offered by King Shreyans.
+                </p>
+                <p>
+                  Historically the capital of the Kuru dynasty and the heart of <strong>Bharatvarsh</strong>, Hastinapur bridges the gap between ancient royal grandeur and eternal spiritual peace.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative h-full min-h-[500px]"
+            >
+              <img 
+                src="/use-assets/hastinapur_collage.png" 
+                alt="हस्तिनापुर तीर्थ क्षेत्र - Ancient Jain Temples of Hastinapur" 
+                className="w-full h-full object-cover" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden lg:block"></div>
+            </motion.div>
+          </div>
+        </section>
         <section className="mb-32">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-bold text-text-main mb-4 font-serif italic">The Cosmic Vision</h2>
