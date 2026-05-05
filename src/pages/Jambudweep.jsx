@@ -474,6 +474,57 @@ export default function Jambudweep() {
           </div>
         </section>
 
+        {/* 🏛 Nearby Sacred Sites Section */}
+        <section className="py-32 bg-background border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-24">
+              <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Explore Hastinapur</span>
+              <h2 className="text-3xl md:text-5xl font-serif text-primary-dark mb-6">Nearby Sacred Sites</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto italic">
+                Hastinapur is a cluster of divine energy. Visit these ancient and modern architectural marvels located just minutes away from Jambudweep.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Prachin Bada Mandir",
+                  desc: "The oldest Jain temple in Hastinapur, built in 1801, housing the main shrine of Lord Shantinatha.",
+                  image: "/use-assets/bada_mandir.png"
+                },
+                {
+                  title: "Kailash Parvat",
+                  desc: "A 131-foot high modern architectural marvel dedicated to Bhagwan Rishabhanatha.",
+                  image: "/use-assets/kailash_parvat.png"
+                },
+                {
+                  title: "Ashtapad Tirth",
+                  desc: "A towering temple complex representing the sacred mountain where Lord Rishabhdev attained Nirvana.",
+                  image: "/use-assets/ashtapad_tirth.png"
+                }
+              ].map((site, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 group"
+                >
+                  <div className="h-64 overflow-hidden relative">
+                    <img src={site.image} alt={site.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-serif text-primary-dark mb-4">{site.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{site.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* 📚 Knowledge & Devotion Centers */}
         <section className="py-24 bg-background relative border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-6">
