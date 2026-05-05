@@ -158,8 +158,8 @@ const satelliteTirths = [
     title: "Ayodhya Tirth Development",
     location: "Ayodhya, UP",
     desc: "The birthplace of five Tirthankaras, featuring a 31ft Adinath statue and a magnificent Trikal Chaubisi complex.",
-    image: "/jambudweep/page_19.png",
-    crop: { x: 50, y: 20, zoom: 2.5 }
+    image: "/use-assets/ayodhya_tirth_hero.jpeg",
+    crop: { x: 50, y: 50, zoom: 1 }
   },
   {
     title: "Kailash Parvat (Prayag)",
