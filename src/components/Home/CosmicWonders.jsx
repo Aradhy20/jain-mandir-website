@@ -6,14 +6,14 @@ const wonders = [
   {
     title: "The Lotus Temple (Kamal Mandir)",
     description: "A breathtaking architectural marvel shaped like a blooming lotus, representing the purity of the soul and the divine path to liberation.",
-    image: "/use-assets/11.jpg",
+    image: "/use-assets/lotus_temple_wiki.jpeg",
     icon: Globe,
     stats: "Inaugurated 1985"
   },
   {
     title: "Mount Sumeru (Sumeru Parvat)",
     description: "A 101-foot tall representation of the center of the universe as described in Jain cosmology, featuring intricate carvings and spiritual symbolism.",
-    image: "/use-assets/1.jpg",
+    image: "/use-assets/18.jpg",
     icon: Zap,
     stats: "101 Feet Tall"
   },
@@ -27,7 +27,7 @@ const wonders = [
   {
     title: "Meditation Temple (Dhyan Mandir)",
     description: "A serene, grass-covered dome designed for deep contemplation and spiritual research, embodying the tranquility of ancient Jain forests.",
-    image: "/use-assets/11.jpg",
+    image: "/use-assets/image.png",
     icon: MapPin,
     stats: "Research Hub"
   }

@@ -39,32 +39,32 @@ const jambudweepTimeline = [
   {
     year: "Ancient Era",
     title: "The Cradle of Tirthankaras",
-    desc: "Hastinapur served as the birthplace of the 16th, 17th, and 18th Tirthankaras (Shantinath, Kunthunath, and Arhanath). It is where Emperor Bharat, after whom India is named 'Bharatvarsh', established his capital."
+    desc: "Hastinapur served as the birthplace of the 16th, 17th, and 18th Tirthankaras (Shantinath, Kunthunath, and Arhanath). It is the sacred land where Emperor Bharat established the capital of Bharatvarsh."
   },
   {
     year: "1965",
     title: "The Divine Vision",
-    desc: "Ganinipramukh Shri Gyanmati Mataji experienced a profound vision of the 'Madhyalok' (middle universe) while in meditation at Shravanabelagola, inspiring the creation of Jambudweep."
+    desc: "While in meditation at Shravanabelagola, Ganinipramukh Shri Gyanmati Mataji had a profound vision of the 'Madhyalok' (middle universe). She later found this vision perfectly matched the descriptions in the ancient scripture 'Tiloyapannatti'."
   },
   {
     year: "1972",
-    title: "Research Foundation",
-    desc: "Establishment of the 'Digambar Jain Trilok Shodh Sansthan' to bridge ancient Jain cosmology with modern geographical science."
+    title: "Foundation Stone",
+    desc: "The foundation stone of the Jambudweep project was laid in June 1972, initiating the creation of the world's first three-dimensional model of Jain cosmology."
   },
   {
     year: "1982",
-    title: "The Flame of Knowledge",
-    desc: "Prime Minister Indira Gandhi flagged off the 'Jambudweep Gyanjyoti' chariot from the Red Fort, Delhi, starting a 1045-day national journey for universal peace."
+    title: "Jambudweep Gyanjyoti",
+    desc: "Prime Minister Indira Gandhi flagged off the 'Jambudweep Gyanjyoti' chariot from the Red Fort, Delhi. This historic 1045-day national journey spread the message of universal peace and Jain cosmology across India."
   },
   {
     year: "1985",
-    title: "Establishment of Sumeru",
-    desc: "The 101ft tall Mount Sumeru model was completed. The 'Akhand Gyanjyoti' was established by P.V. Narasimha Rao, marking the site as a permanent center of enlightenment."
+    title: "Grand Dedication",
+    desc: "The massive 250ft diameter Jambudweep model and the 101ft Mount Sumeru were completed and dedicated to the world. The 'Akhand Gyanjyoti' was established by P.V. Narasimha Rao."
   },
   {
     year: "2008",
-    title: "Presidential Historic Visit",
-    desc: "Her Excellency President Pratibha Patil visited for the World Peace Non-Violence Conference, the first time a President of India visited the Meerut district since independence."
+    title: "Presidential Visit",
+    desc: "Her Excellency President Pratibha Patil visited Jambudweep for the World Peace Non-Violence Conference, acknowledging the site as a global center for spiritual and scientific research."
   }
 ];
 
@@ -74,7 +74,7 @@ const monuments = [
     title: "Mount Sumeru",
     subtitle: "Center of the Universe",
     desc: "A 101-foot architectural marvel crafted from light pink marble, representing the axis of the Jain universe with 136 internal steps and 16 Jinayalyas.",
-    image: "/use-assets/14.jpg",
+    image: "/use-assets/18.jpg",
     stats: "101 FT Tall",
     crop: { x: 50, y: 50, zoom: 1.5 }
   },
@@ -83,7 +83,7 @@ const monuments = [
     title: "Lotus Temple",
     subtitle: "Symbol of Purity",
     desc: "The unique Kamal Mandir, sitting gracefully in a water body, houses a 10.25ft idol of Bhagwan Mahavir, symbolizing the blossoming of spiritual consciousness.",
-    image: "/use-assets/11.jpg",
+    image: "/use-assets/lotus_temple_wiki.jpeg",
     stats: "Floating Design",
     crop: { x: 50, y: 50, zoom: 1.5 }
   },
@@ -228,8 +228,8 @@ const institutions = [
 
 const galleryImages = [
   { id: 1, src: '/use-assets/16.jpg', title: 'Aerial View of Campus', category: 'Campus', crop: { x: 50, y: 50, zoom: 1 } },
-  { id: 2, src: '/use-assets/14.jpg', title: 'Majestic Mount Sumeru', category: 'Architecture', crop: { x: 50, y: 50, zoom: 1 } },
-  { id: 3, src: '/use-assets/11.jpg', title: 'Kamal Mandir (Lotus Temple)', category: 'Architecture', crop: { x: 50, y: 50, zoom: 1 } },
+  { id: 2, src: '/use-assets/18.jpg', title: 'Majestic Mount Sumeru', category: 'Architecture', crop: { x: 50, y: 50, zoom: 1 } },
+  { id: 3, src: '/use-assets/lotus_temple_wiki.jpeg', title: 'Kamal Mandir (Lotus Temple)', category: 'Architecture', crop: { x: 50, y: 50, zoom: 1 } },
   { id: 4, src: '/use-assets/1.jpg', title: 'Terahdweep Representation', category: 'Cosmology', crop: { x: 50, y: 50, zoom: 1 } },
   { id: 5, src: '/use-assets/13.jpg', title: 'Sacred Architecture', category: 'Architecture', crop: { x: 50, y: 50, zoom: 1 } },
   { id: 6, src: '/jambudweep/statue_of_ahimsa_premium.png', title: 'Statue of Ahimsa', category: 'Architecture', crop: { x: 50, y: 50, zoom: 1 } },
@@ -278,10 +278,16 @@ export default function Jambudweep() {
               A 30-acre spiritual masterpiece where ancient cosmology meets architectural grandeur. Explore the cradle of Tirthankaras.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <button className="bg-secondary text-primary-dark font-bold px-10 py-4 rounded-full shadow-2xl hover:bg-white transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+              <button 
+                onClick={() => document.getElementById('history-timeline')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-secondary text-primary-dark font-bold px-10 py-4 rounded-full shadow-2xl hover:bg-white transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
                 Explore The History <ChevronRight size={20} />
               </button>
-              <button className="bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold px-10 py-4 rounded-full hover:bg-white/20 transition-all flex items-center gap-2">
+              <button 
+                onClick={() => document.getElementById('visual-gallery')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold px-10 py-4 rounded-full hover:bg-white/20 transition-all flex items-center gap-2"
+              >
                 <Play size={20} /> Virtual Darshan
               </button>
             </div>
@@ -394,7 +400,7 @@ export default function Jambudweep() {
                 transition={{ delay: 0.3 }}
                 className="text-text-muted text-lg max-w-3xl mx-auto leading-relaxed"
               >
-                Witness the grand 35-acre physical representation of the Jain middle universe (Madhyalok). At the center stands the majestic 101-foot Mount Sumeru, surrounded by concentric circles of oceans and continents precisely as described in ancient scriptures.
+                Witness the grand 250-foot diameter physical representation of the Jain middle universe (Madhyalok). This architectural masterpiece precisely depicts the continents, oceans, and mountains described in ancient scriptures using intricate white and colored marble stones. At its center stands the majestic 101-foot Mount Sumeru.
               </motion.p>
             </div>
 
@@ -556,7 +562,7 @@ export default function Jambudweep() {
         </section>
 
       {/* ⏳ Timeline Section */}
-      <section className="py-32 bg-background border-y border-gray-100">
+      <section id="history-timeline" className="py-32 bg-background border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-3xl md:text-5xl font-bold text-primary-dark font-serif mb-6">The Journey of Enlightenment</h2>
@@ -688,7 +694,7 @@ export default function Jambudweep() {
       </section>
 
       {/* 🖼 Premium Gallery (Pinterest Style) */}
-      <section className="py-32 bg-background">
+      <section id="visual-gallery" className="py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-3xl md:text-5xl font-bold text-primary-dark font-serif mb-8 text-center">Visual Chronicles</h2>
@@ -821,9 +827,14 @@ export default function Jambudweep() {
                   <p className="text-text-muted text-sm italic">Hastinapur, Uttar Pradesh, India</p>
                 </div>
               </div>
-              <button className="bg-primary-dark text-white px-10 py-4 rounded-full font-bold shadow-2xl hover:bg-primary transition-all">
+              <a 
+                href="https://maps.app.goo.gl/nC3Arkoe1jCwaz7v8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-primary-dark text-white px-10 py-4 rounded-full font-bold shadow-2xl hover:bg-primary transition-all text-center"
+              >
                 Get Directions
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

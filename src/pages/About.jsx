@@ -25,7 +25,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Shri Digambar Jain Mandir</span>
+              <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Shri Digambar Jain Atishaya Kshetra, Jambudweep</span>
               <h1 className="text-4xl md:text-7xl font-bold text-text-main mb-8 font-serif leading-tight">
                 Where Ancient <span className="text-primary">Wisdom</span> Meets Science
               </h1>
@@ -64,7 +64,9 @@ export default function About() {
           <div className="text-center mb-20">
             <h2 className="text-4xl font-bold text-text-main mb-4 font-serif italic">The Cosmic Vision</h2>
             <div className="w-24 h-1.5 bg-primary mx-auto mb-8"></div>
-            <p className="max-w-2xl mx-auto text-text-muted">Understanding the geography of the universe through the lens of ancient Jain scriptures.</p>
+            <p className="max-w-2xl mx-auto text-text-muted">
+              Ganinipramukh Shri Gyanmati Mataji's divine vision of the middle universe (Madhyalok) was found to perfectly align with the ancient Jain scripture, <strong>Tiloyapannatti</strong>, leading to the creation of Jambudweep.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -138,12 +140,12 @@ export default function About() {
 
           <div className="max-w-4xl mx-auto space-y-4">
             {[
-              { year: "1981", event: "'Jambudweep Gyan Jyoti Seminar' at Hastinapur." },
-              { year: "1982", event: "'Gyan Jyoti Rath' tour inaugurated by PM Indira Gandhi." },
-              { year: "1997", event: "President Dr. Shankar Dayal Sharma inaugurates Chovisi Vidhan." },
+              { year: "1972", event: "Foundation stone laid by the Digambar Jain Trilok Shodh Sansthan." },
+              { year: "1982", event: "PM Indira Gandhi inaugurates 'Jambudweep Gyan Jyoti' tour from Red Fort." },
+              { year: "1985", event: "Grand dedication of the 101ft Mount Sumeru by P.V. Narasimha Rao." },
+              { year: "1997", event: "President Dr. Shankar Dayal Sharma inaugurates the Chovisi Vidhan." },
               { year: "1998", event: "PM Atal Bihari Vajpayee inaugurates Rishabhdev Samavsaran Rath." },
-              { year: "2008", event: "President Pratibha Patil inaugurates World Peace Conference." },
-              { year: "2010", event: "Diamond Jubilee and 31ft idol Panchkalyanak celebrations." }
+              { year: "2008", event: "President Pratibha Patil inaugurates the World Peace Non-Violence Conference." }
             ].map((milestone, i) => (
               <motion.div 
                 key={i}

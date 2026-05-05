@@ -6,30 +6,30 @@ const services = [
   {
     id: 1,
     title: 'Daily Darshan',
-    description: 'Experience the divine presence with our peaceful daily viewing sessions.',
+    description: 'Experience the divine presence with our peaceful daily viewing sessions of Lord Rishabhdev.',
     icon: <Sun size={32} />,
-    image: '/use-assets/13.jpg'
+    image: '/use-assets/daily_darshan.png'
   },
   {
     id: 2,
     title: 'Evening Aarti',
-    description: 'Join us for the mesmerizing evening prayers that illuminate the soul.',
+    description: 'Join us for the mesmerizing evening prayers that illuminate the soul with a thousand lamps.',
     icon: <Star size={32} />,
-    image: '/use-assets/14.jpg'
+    image: '/use-assets/evening_aarti.png'
   },
   {
     id: 3,
     title: 'Pathshala',
-    description: 'Weekly educational sessions for the younger generation to learn core values.',
+    description: 'Weekly educational sessions at the Jambudweep Library for the younger generation.',
     icon: <BookOpen size={32} />,
-    image: '/use-assets/15.jpg'
+    image: '/use-assets/library.png'
   },
   {
     id: 4,
     title: 'Community Seva',
-    description: 'Volunteer programs aimed at serving the local community unconditionally.',
+    description: 'Volunteer programs and spiritual discourses at the Acharya Shantisagar Pravachan Hall.',
     icon: <Users size={32} />,
-    image: '/use-assets/16.jpg'
+    image: '/use-assets/pravachan_hall.png'
   }
 ];
 

@@ -11,10 +11,20 @@ import GalleryPage from './pages/GalleryPage';
 import Donations from './pages/Donations';
 import Leaders from './pages/Leaders';
 
+import AdminLayout from './admin/components/AdminLayout';
+import AdminLogin from './admin/pages/AdminLogin';
+import AdminDashboard from './admin/pages/AdminDashboard';
+import ManageBlogs from './admin/pages/ManageBlogs';
+import ManageGallery from './admin/pages/ManageGallery';
+import ManageEvents from './admin/pages/ManageEvents';
+import ManageNews from './admin/pages/ManageNews';
+import ProtectedRoute from './admin/components/ProtectedRoute';
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Public Website Routes */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -25,6 +35,23 @@ function App() {
           <Route path="donations" element={<Donations />} />
           <Route path="contact" element={<Contact />} />
           <Route path="news" element={<News />} />
+        </Route>
+
+        {/* Admin Dashboard Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route 
+          path="/admin" 
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<AdminDashboard />} />
+          <Route path="blogs" element={<ManageBlogs />} />
+          <Route path="gallery" element={<ManageGallery />} />
+          <Route path="events" element={<ManageEvents />} />
+          <Route path="news" element={<ManageNews />} />
         </Route>
       </Routes>
     </BrowserRouter>

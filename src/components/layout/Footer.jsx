@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img loading="lazy" src="/use-assets/10.jpg" alt="" className="h-10 w-10 rounded-full" />
-              <span className="font-serif font-bold text-2xl text-primary">Jain Mandir</span>
+              <span className="font-serif font-bold text-2xl text-primary">Jambudweep</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Dedicated to preserving the core principles of Jainism: Ahimsa (non-violence), Anekantavada (many-sidedness), and Aparigraha (non-attachment). Join us in our spiritual journey.
@@ -62,15 +62,15 @@ export default function Footer() {
             <ul className="space-y-4 text-gray-400 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                <span>Jambudweep, Hastinapur, District Meerut, Uttar Pradesh - 250404</span>
+                <span>Jain Temple Road, Hastinapur, Meerut, Uttar Pradesh - 250404</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary shrink-0" />
-                <span>+91 121 281846</span>
+                <span>+91-9412708203, +91-9411025124</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary shrink-0" />
-                <span>jambudweeptirth@gmail.com</span>
+                <span>ravindrajain@jambudweep.org</span>
               </li>
             </ul>
           </div>
@@ -81,7 +81,7 @@ export default function Footer() {
       <div className="bg-gray-950 py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} Shri Digambar Jain Mandir. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Shri Digambar Jain Atishaya Kshetra, Jambudweep. All Rights Reserved.
           </p>
           <div className="flex space-x-4 text-sm text-gray-500">
             <Link to="#" className="hover:text-primary transition">Privacy Policy</Link>

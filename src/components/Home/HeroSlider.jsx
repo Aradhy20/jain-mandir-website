@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const slides = [
   {
@@ -31,6 +32,7 @@ const slides = [
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -68,7 +70,7 @@ export default function HeroSlider() {
               transition={{ delay: 0.5 }}
               className="text-secondary font-bold tracking-[0.3em] uppercase text-sm mb-4"
             >
-              Welcome to Shri Digambar Jain Mandir
+              Welcome to Shri Digambar Jain Atishaya Kshetra, Jambudweep
             </motion.span>
             
             <motion.h1 
@@ -95,10 +97,16 @@ export default function HeroSlider() {
               transition={{ duration: 0.5, delay: 1.5 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 active:scale-95">
+              <button 
+                onClick={() => navigate('/jambudweep')}
+                className="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-full font-semibold text-lg transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 active:scale-95"
+              >
                 Explore Jambudweep
               </button>
-              <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-full font-semibold text-lg transition-all hover:-translate-y-1 active:scale-95">
+              <button 
+                onClick={() => navigate('/gallery')}
+                className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-full font-semibold text-lg transition-all hover:-translate-y-1 active:scale-95"
+              >
                 Watch Documentary
               </button>
             </motion.div>

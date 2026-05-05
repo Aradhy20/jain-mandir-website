@@ -64,7 +64,8 @@ export default function Contact() {
               <div>
                 <h4 className="text-xl font-bold text-text-main mb-2">Location</h4>
                 <p className="text-text-muted leading-relaxed">
-                  Jambudweep, Hastinapur,<br/>
+                  Shri Digambar Jain Atishaya Kshetra, Jambudweep<br/>
+                  Jain Temple Road, Hastinapur,<br/>
                   District Meerut, Uttar Pradesh<br/>
                   PIN - 250404, India
                 </p>
@@ -78,9 +79,9 @@ export default function Contact() {
               <div>
                 <h4 className="text-xl font-bold text-text-main mb-2">Contact Numbers</h4>
                 <p className="text-text-muted leading-relaxed">
-                  Landline: (01233) 280184, 280994<br/>
+                  Landline: (01233) 280184, 280236<br/>
                   Main Office: +91 121 281846<br/>
-                  Mobile: +91 94102 23761
+                  Mobile: +91 94127 08203, +91 94110 25124
                 </p>
               </div>
             </div>
@@ -98,9 +99,15 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex gap-6 pt-4 border-t border-gray-100">
-              <Mail className="text-primary" size={24} />
-              <p className="text-text-muted">jambudweeptirth@gmail.com</p>
+            <div className="flex flex-col gap-2 pt-4 border-t border-gray-100">
+              <div className="flex gap-4">
+                <Mail className="text-primary" size={20} />
+                <p className="text-text-muted text-sm">ravindrajain@jambudweep.org</p>
+              </div>
+              <div className="flex gap-4">
+                <Mail className="text-primary" size={20} />
+                <p className="text-text-muted text-sm">jambudweeptirth@gmail.com</p>
+              </div>
             </div>
           </motion.div>
 
@@ -204,7 +211,7 @@ export default function Contact() {
           className="rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl border-4 border-white h-[450px]"
         >
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487.653457194689!2d78.01633517616644!3d29.027151075452936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c74f555555555%3A0x7d6a5a0d33333333!2sJambudweep%20Jain%20Tirth!5e0!3m2!1sen!2sin!4v1714750000000!5m2!1sen!2sin" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487.653456789!2d78.0075343!3d29.1643924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390b8bfad21438b9%3A0x4ade9850fb6729e8!2sDigamber%20Jain%20Mandir%20-%20Jambu%20Dweep%20Rachna!5e0!3m2!1sen!2sin!4v1714900000000!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
