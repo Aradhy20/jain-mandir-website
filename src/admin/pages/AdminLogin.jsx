@@ -24,7 +24,13 @@ const AdminLogin = () => {
             localStorage.setItem('admin_token', response.data.token);
             navigate('/admin');
         } catch (err) {
-            setError(err.response?.data?.message || 'Invalid credentials');
+            if (err.response?.status === 429) {
+                setError('Too many failed attempts. Please wait 1 minute before trying again.');
+            } else if (err.response?.status === 403) {
+                setError('Access denied: Administrator privileges required.');
+            } else {
+                setError(err.response?.data?.message || 'Invalid email or password.');
+            }
         } finally {
             setLoading(false);
         }

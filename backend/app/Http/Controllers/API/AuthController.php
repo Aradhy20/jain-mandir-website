@@ -13,9 +13,9 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-            'device_name' => 'required',
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|min:6|max:255',
+            'device_name' => 'required|string|max:100',
         ]);
 
         $user = User::where('email', $request->email)->first();
@@ -26,20 +26,41 @@ class AuthController extends Controller
             ]);
         }
 
+        // Verify administrator privilege
+        if (! $user->isAdmin()) {
+            return response()->json([
+                'message' => 'Unauthorized. Administrator access required.'
+            ], 403);
+        }
+
         return response()->json([
-            'token' => $user->createToken($request->device_name)->plainTextToken,
-            'user' => $user
+            'token' => $user->createToken($request->device_name, ['admin'])->plainTextToken,
+            'user' => [
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'is_admin' => (bool) $user->is_admin,
+            ]
         ]);
     }
 
     public function logout(Request $request)
     {
-        $request->user()->currentAccessToken()->delete();
-        return response()->json(['message' => 'Logged out']);
+        $token = $request->user()?->currentAccessToken();
+        if ($token) {
+            $token->delete();
+        }
+        return response()->json(['message' => 'Logged out successfully']);
     }
 
     public function me(Request $request)
     {
-        return $request->user();
+        $user = $request->user();
+        return response()->json([
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
+            'is_admin' => (bool) $user->is_admin,
+        ]);
     }
 }

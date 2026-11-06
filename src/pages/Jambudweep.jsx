@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Globe, 
-  History, 
   MapPin, 
   Award, 
-  Camera, 
   BookOpen, 
   Zap, 
   Milestone, 
@@ -703,7 +701,7 @@ export default function Jambudweep() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {monuments.map((monument, index) => (
+            {monuments.map((monument) => (
               <motion.div
                 key={monument.id}
                 initial={{ opacity: 0, scale: 0.95 }}

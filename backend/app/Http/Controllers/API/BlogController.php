@@ -9,20 +9,36 @@ use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return Blog::orderBy('published_at', 'desc')->get();
+        $query = Blog::query();
+
+        // Enforce published-only visibility for public callers
+        $user = auth('sanctum')->user();
+        $isAdmin = $user && $user->isAdmin();
+
+        if (! $isAdmin) {
+            $query->whereNotNull('published_at')
+                  ->where('published_at', '<=', now());
+        }
+
+        return $query->orderBy('published_at', 'desc')->get();
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
-            'image_url' => 'nullable|string',
-            'author' => 'nullable|string',
+            'title' => 'required|string|min:2|max:255',
+            'content' => 'required|string|max:65535',
+            'image_url' => 'nullable|string|max:2048',
+            'author' => 'nullable|string|max:100',
             'published_at' => 'nullable|date',
         ]);
+
+        $validated['title'] = strip_tags(trim($validated['title']));
+        if (isset($validated['author'])) {
+            $validated['author'] = strip_tags(trim($validated['author']));
+        }
 
         $validated['slug'] = Str::slug($validated['title']) . '-' . time();
 
@@ -33,21 +49,33 @@ class BlogController extends Controller
 
     public function show(Blog $blog)
     {
+        $user = auth('sanctum')->user();
+        $isAdmin = $user && $user->isAdmin();
+
+        if (! $isAdmin && (! $blog->published_at || $blog->published_at > now())) {
+            abort(404, 'Article not found');
+        }
+
         return $blog;
     }
 
     public function update(Request $request, Blog $blog)
     {
         $validated = $request->validate([
-            'title' => 'string|max:255',
-            'content' => 'string',
-            'image_url' => 'nullable|string',
-            'author' => 'nullable|string',
+            'title' => 'sometimes|required|string|min:2|max:255',
+            'content' => 'sometimes|required|string|max:65535',
+            'image_url' => 'nullable|string|max:2048',
+            'author' => 'nullable|string|max:100',
             'published_at' => 'nullable|date',
         ]);
 
         if (isset($validated['title'])) {
+            $validated['title'] = strip_tags(trim($validated['title']));
             $validated['slug'] = Str::slug($validated['title']) . '-' . time();
+        }
+
+        if (isset($validated['author'])) {
+            $validated['author'] = strip_tags(trim($validated['author']));
         }
 
         $blog->update($validated);

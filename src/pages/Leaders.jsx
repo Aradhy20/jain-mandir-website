@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import leadersData from '../data/leadersData.json';
-import { Book, Award, Milestone } from 'lucide-react';
+import { Book, Award } from 'lucide-react';
 
 export default function Leaders() {
   const { about_mataji, leaders, institution } = leadersData;

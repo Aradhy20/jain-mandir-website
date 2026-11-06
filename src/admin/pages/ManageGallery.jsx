@@ -13,10 +13,6 @@ const ManageGallery = () => {
         description: ''
     });
 
-    useEffect(() => {
-        fetchItems();
-    }, []);
-
     const fetchItems = async () => {
         try {
             const response = await client.get('/gallery');
@@ -25,6 +21,10 @@ const ManageGallery = () => {
             console.error('Error fetching gallery items:', err);
         }
     };
+
+    useEffect(() => {
+        fetchItems();
+    }, []);
 
     const handleEdit = (item) => {
         setEditingItem(item);

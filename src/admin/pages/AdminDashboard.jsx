@@ -11,10 +11,6 @@ const AdminDashboard = () => {
         news: 0
     });
 
-    useEffect(() => {
-        fetchStats();
-    }, []);
-
     const fetchStats = async () => {
         try {
             const [blogs, gallery, events, news] = await Promise.all([
@@ -33,6 +29,10 @@ const AdminDashboard = () => {
             console.error('Error fetching stats:', err);
         }
     };
+
+    useEffect(() => {
+        fetchStats();
+    }, []);
 
     const statCards = [
         { name: 'Blogs', count: stats.blogs, icon: <FileText className="text-blue-400" />, path: '/admin/blogs', color: 'blue' },

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import client from '../api/client';
-import { Plus, Edit2, Trash2, X, Newspaper } from 'lucide-react';
+import { Plus, Edit2, Trash2, X } from 'lucide-react';
 
 const ManageNews = () => {
     const [news, setNews] = useState([]);
@@ -13,10 +13,6 @@ const ManageNews = () => {
         image_url: ''
     });
 
-    useEffect(() => {
-        fetchNews();
-    }, []);
-
     const fetchNews = async () => {
         try {
             const response = await client.get('/news');
@@ -25,6 +21,10 @@ const ManageNews = () => {
             console.error('Error fetching news:', err);
         }
     };
+
+    useEffect(() => {
+        fetchNews();
+    }, []);
 
     const handleEdit = (item) => {
         setEditingItem(item);

@@ -16,12 +16,17 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
+            'title' => 'required|string|min:2|max:255',
+            'description' => 'required|string|max:65535',
             'event_date' => 'nullable|date',
-            'location' => 'nullable|string',
-            'image_url' => 'nullable|string',
+            'location' => 'nullable|string|max:255',
+            'image_url' => 'nullable|string|max:2048',
         ]);
+
+        $validated['title'] = strip_tags(trim($validated['title']));
+        if (isset($validated['location'])) {
+            $validated['location'] = strip_tags(trim($validated['location']));
+        }
 
         $event = Event::create($validated);
 
@@ -36,12 +41,19 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         $validated = $request->validate([
-            'title' => 'string|max:255',
-            'description' => 'string',
+            'title' => 'sometimes|required|string|min:2|max:255',
+            'description' => 'sometimes|required|string|max:65535',
             'event_date' => 'nullable|date',
-            'location' => 'nullable|string',
-            'image_url' => 'nullable|string',
+            'location' => 'nullable|string|max:255',
+            'image_url' => 'nullable|string|max:2048',
         ]);
+
+        if (isset($validated['title'])) {
+            $validated['title'] = strip_tags(trim($validated['title']));
+        }
+        if (isset($validated['location'])) {
+            $validated['location'] = strip_tags(trim($validated['location']));
+        }
 
         $event->update($validated);
 

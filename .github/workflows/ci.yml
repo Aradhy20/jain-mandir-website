@@ -1,0 +1,80 @@
+name: Security, Lint & Automated Tests CI
+
+on:
+  push:
+    branches: [ "main", "security/**" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend-security-and-build:
+    name: Frontend Lint, Audit & Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Frontend Dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Frontend Production Build
+        run: npm run build
+
+      - name: Scan Production Runtime Dependencies for All Vulnerabilities
+        run: npm audit --omit=dev
+
+      - name: Run Full Dependency Advisory Audit
+        run: npm audit || true
+
+  backend-security-and-tests:
+    name: Backend Audit, PHPUnit & Security Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP and Extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo, sqlite3, pdo_sqlite, bcmath
+          coverage: none
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Install Composer Dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction --optimize-autoloader
+
+      - name: Run Composer Security Advisory Audit
+        run: composer audit
+
+      - name: Prepare Test Environment
+        run: |
+          cp .env.example .env.testing
+          touch database/database.sqlite
+          php artisan key:generate --env=testing
+          php artisan migrate --env=testing --force
+
+      - name: Execute Automated Laravel & Security Tests
+        run: php artisan test --env=testing
+

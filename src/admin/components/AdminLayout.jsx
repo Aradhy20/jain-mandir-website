@@ -1,13 +1,20 @@
 import React from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { LayoutDashboard, FileText, Image as ImageIcon, Calendar, Newspaper, LogOut, Home } from 'lucide-react';
+import client from '../api/client';
 
 const AdminLayout = () => {
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-        localStorage.removeItem('admin_token');
-        navigate('/admin/login');
+    const handleLogout = async () => {
+        try {
+            await client.post('/logout');
+        } catch (err) {
+            console.error('Error logging out on server:', err);
+        } finally {
+            localStorage.removeItem('admin_token');
+            navigate('/admin/login');
+        }
     };
 
     const navItems = [

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import client from '../api/client';
-import { Plus, Edit2, Trash2, X, Check } from 'lucide-react';
+import { Plus, Edit2, Trash2, X } from 'lucide-react';
 
 const ManageBlogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -14,10 +14,6 @@ const ManageBlogs = () => {
         published_at: new Date().toISOString().split('T')[0]
     });
 
-    useEffect(() => {
-        fetchBlogs();
-    }, []);
-
     const fetchBlogs = async () => {
         try {
             const response = await client.get('/blogs');
@@ -26,6 +22,10 @@ const ManageBlogs = () => {
             console.error('Error fetching blogs:', err);
         }
     };
+
+    useEffect(() => {
+        fetchBlogs();
+    }, []);
 
     const handleEdit = (blog) => {
         setEditingBlog(blog);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import client from '../api/client';
-import { Plus, Edit2, Trash2, X, Calendar } from 'lucide-react';
+import { Plus, Edit2, Trash2, X } from 'lucide-react';
 
 const ManageEvents = () => {
     const [events, setEvents] = useState([]);
@@ -14,10 +14,6 @@ const ManageEvents = () => {
         image_url: ''
     });
 
-    useEffect(() => {
-        fetchEvents();
-    }, []);
-
     const fetchEvents = async () => {
         try {
             const response = await client.get('/events');
@@ -26,6 +22,10 @@ const ManageEvents = () => {
             console.error('Error fetching events:', err);
         }
     };
+
+    useEffect(() => {
+        fetchEvents();
+    }, []);
 
     const handleEdit = (event) => {
         setEditingEvent(event);

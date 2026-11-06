@@ -13,5 +13,17 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  build: {
+    sourcemap: false, // Prevent exposing sensitive source maps in production
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-core': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-icons': ['lucide-react'],
+        }
+      }
+    }
   }
 })

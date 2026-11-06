@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Construction, BookOpen } from 'lucide-react';
+import { Calendar, Clock, Construction, BookOpen } from 'lucide-react';
 import eventsData from '../data/eventsData.json';
 
 export default function Events() {

@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Globe, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, Send, CheckCircle } from 'lucide-react';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage('');
     
     const formData = new FormData(e.target);
     const data = {
@@ -18,7 +20,7 @@ export default function Contact() {
     };
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/contact`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000/api'}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -27,11 +29,12 @@ export default function Contact() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert('Failed to send message. Please check if the backend is running.');
+        const errorData = await response.json().catch(() => null);
+        setErrorMessage(errorData?.message || 'Failed to send message. Please verify your input or try again shortly.');
       }
     } catch (err) {
       console.error(err);
-      alert('Error connecting to the server.');
+      setErrorMessage('Unable to connect to the server. Please check your network connection.');
     } finally {
       setLoading(false);
     }
@@ -93,8 +96,8 @@ export default function Contact() {
               <div>
                 <h4 className="text-xl font-bold text-text-main mb-2">Digital Presence</h4>
                 <div className="space-y-1">
-                  <a href="http://www.jambudweep.org" target="_blank" rel="noopener noreferrer" className="block text-primary hover:underline">www.jambudweep.org</a>
-                  <a href="http://www.encyclopediaofjainism.com" target="_blank" rel="noopener noreferrer" className="block text-primary hover:underline">www.encyclopediaofjainism.com</a>
+                  <a href="https://www.jambudweep.org" target="_blank" rel="noopener noreferrer" className="block text-primary hover:underline">www.jambudweep.org</a>
+                  <a href="https://www.encyclopediaofjainism.com" target="_blank" rel="noopener noreferrer" className="block text-primary hover:underline">www.encyclopediaofjainism.com</a>
                 </div>
               </div>
             </div>
@@ -161,6 +164,12 @@ export default function Contact() {
                       placeholder="How can we help you?"
                     ></textarea>
                   </div>
+
+                  {errorMessage && (
+                    <div className="p-4 bg-red-50 border border-red-200 text-red-600 rounded-2xl text-sm" role="alert">
+                      {errorMessage}
+                    </div>
+                  )}
 
                   <button 
                     disabled={loading}

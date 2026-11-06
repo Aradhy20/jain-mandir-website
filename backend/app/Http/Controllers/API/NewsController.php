@@ -16,11 +16,13 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'title' => 'required|string|min:2|max:255',
+            'content' => 'required|string|max:65535',
             'news_date' => 'nullable|date',
-            'image_url' => 'nullable|string',
+            'image_url' => 'nullable|string|max:2048',
         ]);
+
+        $validated['title'] = strip_tags(trim($validated['title']));
 
         $news = NewsItem::create($validated);
 
@@ -35,11 +37,15 @@ class NewsController extends Controller
     public function update(Request $request, NewsItem $newsItem)
     {
         $validated = $request->validate([
-            'title' => 'string|max:255',
-            'content' => 'string',
+            'title' => 'sometimes|required|string|min:2|max:255',
+            'content' => 'sometimes|required|string|max:65535',
             'news_date' => 'nullable|date',
-            'image_url' => 'nullable|string',
+            'image_url' => 'nullable|string|max:2048',
         ]);
+
+        if (isset($validated['title'])) {
+            $validated['title'] = strip_tags(trim($validated['title']));
+        }
 
         $newsItem->update($validated);
 
