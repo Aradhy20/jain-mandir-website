@@ -18,12 +18,14 @@ export default function AboutSection() {
           >
             <div className="absolute -inset-4 bg-primary/20 rounded-2xl transform rotate-3 z-0"></div>
             
-            <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border-4 border-white">
+            <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border-4 border-white bg-gray-900">
               <video 
                 autoPlay 
                 loop 
                 muted 
                 playsInline
+                preload="metadata"
+                poster="/use-assets/11.jpg"
                 className="w-full h-[500px] object-cover scale-105"
                 src="/use-assets/kamal_mandir_2.mp4"
               ></video>

@@ -10,6 +10,8 @@ export default function FeatureSection() {
             loop 
             muted 
             playsInline
+            preload="metadata"
+            poster="/use-assets/14.jpg"
             className="w-full h-full object-cover opacity-20"
             src="/use-assets/sumeru_parvat_5.mp4"
           ></video>

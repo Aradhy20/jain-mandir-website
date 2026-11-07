@@ -28,7 +28,7 @@ const wonders = [
   {
     title: "Meditation Temple (Dhyan Mandir)",
     description: "A serene, grass-covered dome designed specifically for deep contemplation and spiritual research. Embodying the tranquility of ancient Jain forests, it provides seekers with a vibrationally pure environment to practice mindfulness, disconnect from worldly attachments, and connect with their inner consciousness.",
-    image: "/use-assets/image.png",
+    image: "/use-assets/dhyan_mandir.jpg",
     icon: MapPin,
     stats: "Research Hub"
   }

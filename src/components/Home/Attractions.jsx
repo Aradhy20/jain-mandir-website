@@ -5,17 +5,20 @@ const attractions = [
   {
     title: "Jambudvipa Model",
     desc: "A massive 250ft diameter circular representation of the Jain universe.",
-    image: "/use-assets/22.jpg"
+    image: "/use-assets/22.jpg",
+    poster: "/use-assets/22.jpg"
   },
   {
     title: "Mount Sumeru",
     desc: "A 101ft tall architectural marvel made of light pink marble.",
-    image: "/use-assets/sumeru_parvat_6.mp4"
+    image: "/use-assets/sumeru_parvat_6.mp4",
+    poster: "/use-assets/18.jpg"
   },
   {
     title: "Lotus Temple (Kamal Mandir)",
     desc: "A stunning architectural symbol of purity, shaped like a blooming lotus.",
-    image: "/use-assets/kamal_mandir_2.mp4"
+    image: "/use-assets/kamal_mandir_2.mp4",
+    poster: "/use-assets/11.jpg"
   }
 ];
 
@@ -41,7 +44,16 @@ export default function Attractions() {
             >
               <div className="relative h-[400px] rounded-[2.5rem] overflow-hidden mb-6 shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 {item.image.toLowerCase().endsWith('.mp4') ? (
-                  <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={item.image} />
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    preload="metadata"
+                    poster={item.poster}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                    src={item.image} 
+                  />
                 ) : (
                   <img loading="lazy" src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 )}

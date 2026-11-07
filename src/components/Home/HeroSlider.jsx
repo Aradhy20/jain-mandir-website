@@ -5,26 +5,31 @@ import { useNavigate } from 'react-router-dom';
 const slides = [
   {
     video: "/use-assets/sumeru_parvat_3.mp4",
+    poster: "/use-assets/14.jpg",
     title: "Sumeru Parvat",
     subtitle: "A divine representation of the center of the universe as per Jain cosmology."
   },
   {
     video: "/use-assets/kamal_mandir_2.mp4",
+    poster: "/use-assets/11.jpg",
     title: "Kamal Mandir",
     subtitle: "The stunning Lotus Temple, a masterpiece of modern Jain architecture."
   },
   {
     video: "/use-assets/sumeru_parvat_2.mp4",
+    poster: "/use-assets/22.jpg",
     title: "Sacred Heights",
     subtitle: "Experience the spiritual grandeur of the 101ft Mount Sumeru."
   },
   {
     video: "/use-assets/sumeru_parvat_5.mp4",
+    poster: "/use-assets/1.jpg",
     title: "Divine Architecture",
     subtitle: "Every structure in Jambudweep is a testament to scriptural precision."
   },
   {
     video: "/use-assets/sumeru_parvat_6.mp4",
+    poster: "/use-assets/16.jpg",
     title: "Spiritual Peace",
     subtitle: "Experience tranquility at the holy land of Hastinapur."
   }
@@ -42,21 +47,29 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative h-screen h-[100svh] w-full overflow-hidden bg-black">
-      <AnimatePresence mode="wait">
+    <div className="relative h-screen h-[100svh] w-full overflow-hidden bg-primary-dark">
+      <AnimatePresence>
         <motion.div
           key={current}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1.2 }}
           className="absolute inset-0"
         >
+          {/* Instant Background Poster Fallback */}
+          <img 
+            src={slides[current].poster} 
+            alt={slides[current].title}
+            className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
+          />
           <video 
             autoPlay 
             loop 
             muted 
             playsInline
+            preload="auto"
+            poster={slides[current].poster}
             className="absolute top-0 left-0 w-full h-full object-cover opacity-60"
             src={slides[current].video}
           ></video>
